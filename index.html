@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Alyssa Dong's Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="main.css">
+<!--<link rel= "stylesheet" href = "projects.css">-->
+<script type="text/javascript" src="main.js"></script>
+<!--<script type="text/javascript" src="projects.js"></script>-->
+
+<audio id="bgmusic" src="media/fire.mp3" type="audio/mp3" Hidden="true" loop="true"></audio> 
+
+</head>
+<body>
+<div class="topnav">
+	<b>
+	<a href="index.html">Home</a>
+	<a href="projects.html">Projects</a>
+	<a>Contact Me:</a>
+	<a>(647)648-6752</a>
+	<a>alydong2006@gmail.com</a>
+	<a href = "https://www.linkedin.com/in/alyssa-dong-00a2b2275/">LinkedIn</a>
+	<a href = "https://github.com/alyssadong2006">GitHub</a>
+	</b>
+</div>
+
+<button id = "play-music" onclick="playMusic()"><b>Play Sound</b></button>
+
+<p id = "remind"><b>Click background to interact!</b></p>
+	
+<div class = "intro">
+	<div class = "intro-bar">
+		<img class = "cross" id = "cross" src = "media/cross.png" width="3%">
+	</div>
+	<hr>
+	<img src = "media/avatar.png" width="20%" style="display: inline-block; margin-top: 3%; margin-right: 2%; margin-left: 1%; border-radius: 25px;">
+	<div class = "text-intro">
+		<h1 class = "large-intro">
+			Hi, I'm Alyssa Dong. I code & paint</h1>
+		<p class = "small-intro">I'm a software engineer based in Ontario, Canada. I program in Python (Django Web Dev), JavaScript, 
+			and GDScript (Godot Game Dev). I'm passionate about bringing convenience to our everyday lives through coding, feel free to 
+			connect with me anytime! <br><br> p.s. Just because I know how to code, doesn't mean I know how to design. Sorry if the UI/UX design looks ugly 🥲.
+		</p>
+	</div>
+</div>
+
+<p class = "hidden-text" id = "hidden-text"><b>Haha, this does nothing lol.</b></p>
+
+<button type="div" class="collapsible"><b>My Skills</b></button>
+
+<div class="content">
+  <p>
+	<b>Programming Languages:</b> Python (4 years), GDScript, JavaScript<hr>
+	<b>Frameworks:</b> Django, Tkinter, Pytest, React, TypeScript<hr>
+	<b>Technologies:</b> Git, Windows<hr>
+	<b>Bilingual:</b> Fluent in both English and Mandarin (written and spoken)<hr>
+	<b>Leadership:</b> Co-founder of TastyByte Computing & Executive/Website Manager at PTERYX<hr>
+	<b>G2 Driver License</b>
+  </p>
+</div>
+
+<button type="div" class="collapsible"><b>Experience & Extracurriculars</b></button>
+
+<div class="content">
+	<p>
+		<b>TastyByte Computing - Co-founder</b><br>
+		A nonprofit organization dedicated to providing complimentary programming lessons for beginners.
+	</p>
+	<ul>
+		<li>
+			Completed the process of registering TastyByte Computing with the government after reading through the legal regulations carefully to ensure the legality of the organization
+		</li>
+		<li>
+			Developed and designed the organization’s website while also actively promoting TastyByte Computing.
+		</li>
+		<li>
+			Recruiting and conducting interviews for executive members, and structuring the organization.
+		</li>
+		<li>
+			Prepares and conducts free bi-weekly lessons in Python, HTML, CSS, and C++, instructing students in utilizing the Django Framework and managing the local deployment of a website.
+		</li>
+	</ul>
+
+	<hr>
+	<p>
+		<b>PTERYX Foundation of Culture and Education - Website Manager and Executive</b><br>
+		PTERYX is a non-profit organization that is dedicated to supporting newcomer and minority youth by providing inclusive cultural events and various mental health related resources.
+	</p>
+	<ul>
+		<li>
+			Responsible for designing and improving the <b>UI/UX</b> of the foundation’s website
+		</li>
+		<li>
+			Implemented <b>PsychGPT</b> into the website. PsychGPT is an AI designed and coded by our organization.
+		</li>
+		<li>
+			Works collectively with fellow executives to coordinate events, secure funding, and supervise member management.
+		</li>
+		<li>
+			Collaborated with over <b>10+ organizations and highschools</b>, offering support to more than 3000 students across Canada.
+		</li>
+		<li>
+			Recruiting and conducting interviews for executive members
+		</li>
+	</ul>
+
+	<hr>
+	<p>
+		<b>Completed all Python courses at Sheridan College</b> (Outside of regular day school)<br>
+	</p>
+	<ul>
+		<li>Advanced Python - Django: 89%</li>
+		<li>Intermediate Python - Build App: 100%</li>
+		<li>Intro to Python Programming: 93%</li>
+	</ul>
+
+	<hr>
+	<p>
+		<b>Lifesaving Society Bronze Medallion </b>(Swimming)<br>
+	</p>
+	<ul>
+		<li>
+			Spanned over three continuous years, progressing from level 5 to achieving the Bronze Medallion
+		</li>
+		<li>
+			Acquired <b>Emergency First Aid Certificate</b>
+		</li>
+	</ul>
+
+	<hr>
+	<p>
+		<b>2023 Queen's University Summer Engineering Academy</b><br>
+		Learned the basics of <b>C++</b> and engineering (smoldering wires, redboards, etc.)
+	</p>
+
+	<hr>
+	<p>
+		<b>McDonalds - Customer Service</b><br>
+		Handled order-taking duties through the drive-thru and front counter, prepared drinks and desserts, managed opening and closing procedures for the stores, and was responsible for making fries. Thrived in a high-pressure, fast-paced work environment, contributing to the enhancement of teamwork and communication skills.
+	</p>
+</div>
+
+<button type="div" class="collapsible"><b>Awards</b></button>
+
+<div class="content">
+  <ul>
+	<li>2023 - National Youth Impact Challenge Top 10</li>
+	<li>2023 - University of Waterloo CEMC Fermat International Math Contest Top 25%</li>
+	<li>2023 - University of Waterloo CEMC Hypatia International Math Contest Top 25%</li>
+	<li>2022 - University of Waterloo CEMC Cayley International Math Contest Top 25%</li>
+	<li>2021 - University of Waterloo CEMC Fryer International Math Contest Honors Roll</li>
+	<li>2021 - University of Waterloo CEMC Fryer International Math Contest Top 25%</li>
+	<li>2019 - China National Odyssey of the Mind Third Prize</li>
+	<li>2018 - China National Odyssey of the Mind Third Prize</li>
+	<li>2017 - China National Destination Imagination Renaissance Award</li>
+  </ul>
+</div>
+
+<!--<div class="container" id = "container">
+	<div id="contactheader">Draggable Contact Card</div>
+	<p>Name: Alyssa Dong</p>
+	<p>Email: alydong2006@gmail.com</p>
+	<p>Cell: (647) 648 - 6752</p>
+	<p><a href = "https://www.linkedin.com/in/alyssa-dong-00a2b2275/">LinkedIn</a></p>
+	<p><a href = "https://github.com/alyssadong2006">GitHub</a></p>
+</div>-->
+
+</div>
+
+<div id="cursor">
+</div>
+
+<div class="stage" id = "fireplace">
+	<div class="campfire">
+	  <div class="sparks">
+		<div class="spark"></div>
+		<div class="spark"></div>
+		<div class="spark"></div>
+		<div class="spark"></div>
+		<div class="spark"></div>
+		<div class="spark"></div>
+		<div class="spark"></div>
+		<div class="spark"></div>
+	  </div>
+	  <div class="logs">
+		<div class="log">
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		</div>
+		<div class="log">
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		</div>
+		<div class="log">
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		</div>
+		<div class="log">
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		</div>
+		<div class="log">
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		</div>
+		<div class="log">
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		</div>
+		<div class="log">
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		  <div class="streak"></div>
+		</div>
+	  </div>
+	  <div class="sticks">
+		<div class="stick"></div>
+		<div class="stick"></div>
+		<div class="stick"></div>
+		<div class="stick"></div>
+	  </div>
+	  <div class="fire">
+		<div class="fire__red">
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		</div>
+		<div class="fire__orange">
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		</div>
+		<div class="fire__yellow">
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		</div>
+		<div class="fire__white">
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		  <div class="flame"></div>
+		</div>
+	  </div>
+	</div>
+</div>
+</body>
+</html>
