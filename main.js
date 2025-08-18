@@ -13,32 +13,55 @@ window.onload = function(){
     var i;
 
     //collapsible on home screen
+    // for (i = 0; i < coll.length; i++) {
+    //     coll[i].addEventListener("click", function() {
+    //       this.classList.toggle("active");
+    //       var content = this.nextElementSibling;
+    //       /*if (content.style.display === "block") {
+    //         content.style.display = "none";
+    //       } else {
+    //         content.style.display = "block";
+    //       }*/
+    //       if (content.style.maxHeight){
+    //         content.style.maxHeight = null;
+    //       } else {
+    //         content.style.maxHeight = content.scrollHeight + "px";
+    //       } 
+          
+    //       if (this.style.borderRadius == "25px" || this.style.borderRadius == ""){
+    //         content.style.border = "5px solid rgb(0, 138, 207)"
+    //         this.style.borderRadius = "25px 25px 25px 25px";
+    //       } else if (this.style.borderRadius == "25px 25px 25px 25px"){
+    //         content.style.border = "5px solid rgb(0, 138, 207)"
+    //         setTimeout(() => {
+    //             this.style.borderRadius = "25px";
+    //             content.style.border = "0px solid rgb(0, 138, 207)"
+    //         }, 500);
+    //       }
+    //     });
+    // }
     for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function() {
-          this.classList.toggle("active");
-          var content = this.nextElementSibling;
-          /*if (content.style.display === "block") {
-            content.style.display = "none";
-          } else {
-            content.style.display = "block";
-          }*/
-          if (content.style.maxHeight){
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        
+        if (content.style.maxHeight) {
+            // Collapsing
             content.style.maxHeight = null;
-          } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-          } 
-          if (this.style.borderRadius == "25px" || this.style.borderRadius == ""){
-            content.style.border = "5px solid rgb(0, 138, 207)"
-            this.style.borderRadius = "25px 25px 0px 0px";
-          } else if (this.style.borderRadius == "25px 25px 0px 0px"){
-            content.style.border = "5px solid rgb(0, 138, 207)"
+            content.style.borderWidth = "0";
+            content.style.padding = "0 20px";
             setTimeout(() => {
                 this.style.borderRadius = "25px";
-                content.style.border = "0px solid rgb(0, 138, 207)"
-            }, 500);
-          }
-        });
-    }
+            }, 300);
+        } else {
+            // Expanding
+            content.style.maxHeight = content.scrollHeight + "px";
+            content.style.borderWidth = "5px";
+            content.style.padding = "20px";
+            this.style.borderRadius = "25px 25px 0 0";
+        }
+    });
+}
 }
 
 function playMusic() {

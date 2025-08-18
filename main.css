@@ -1,6 +1,5 @@
 body {
-    width:1490px;  
-    background: src(stage);
+      max-width: 100%;
     background-color: rgb(8, 35, 49);
     background-image: url(media/clouds.png);
     font-family: monospace;
@@ -10,7 +9,9 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     overflow-x: hidden;
-	position: relative;
+    margin: 0;
+    padding: 0;
+    position: relative;
     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🔥</text></svg>")
     16 0,
   auto;;
@@ -37,28 +38,45 @@ body {
     background-color: rgb(0, 138, 207);
 }
 
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+.cross {
+    width: 60px;           /* Make it a bit smaller like a close button */
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.cross:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    background-color: #f8bebe;
+    cursor: pointer;
+}
+
 .topnav {
     background-color: rgb(0, 138, 207);
-    overflow: hidden;
     border-radius: 25px;
-    margin-left: 1%;
-  }
-  
-  /* Style the links inside the navigation bar */
+    padding: 15px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.2rem;
+    margin: 1rem;
+}
 .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
+    color: white;
     text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /* Change the color of links on hover */
+    padding: 8px 12px;
+    border-radius: 8px;
+}
 .topnav a:hover {
     background-color: white;
     color: rgb(0, 138, 207);
-  }
+}
 
 #remind {
     margin-left: 1.5%; 
@@ -70,33 +88,57 @@ body {
 }
 
 .intro {
-    color: rgb(0, 138, 207);
-    margin: auto;
-    width: 50%;
+    display: flex;
+    flex-direction: column;  /* Stack children vertically */
+    align-items: stretch;    /* Stretch children to full width */
+    max-width: 1000px;
+    width: 80%;
+    margin: 3% auto;
     border: 5px solid white;
-    padding: 10px;
-    margin-top: 3%;
-    display: inline-block;
-    margin-left: 12%;
-    background: rgb(255, 255, 255);
+    padding: 20px;
+    background: white;
     border-radius: 25px;
+    box-sizing: border-box;
+    color: rgb(0, 138, 207);
 }
+
+.intro-bar {
+    align-self: flex-end;    /* Align the X button to the right */
+    margin-bottom: 10px;    /* Add some space below the X */
+}
+
+.intro-content {
+    display: flex;          /* This will put image and text side by side */
+    align-items: center;
+    gap: 20px;
+}
+
+.intro img {
+    max-width: 40%;   /* set a nice size */
+    height: auto;
+    flex-shrink: 0;     /* don’t let it shrink too tiny */
+    border-radius: 12px; /* optional: round edges */
+}
+
+.intro-text {
+    text-align: left;
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    max-width:60%;
+}
+
 
 .intro-bar{
     text-align: right;
 }
 
-.text-intro {
-    display: inline-block;
-    width: 75%;
-    text-wrap: wrap;
-}
 
 .large-intro {
     margin: auto;
     width: 100%;
     text-align: center;
-    font-size: 215%;
+    font-size: 200%;
     text-align: left;
 }
 
@@ -110,11 +152,6 @@ body {
 
 .small-intro:hover {
     background-color: rgb(251, 242, 162);
-}
-
-.cross:hover {
-    background-color: #f8bebe;
-    cursor: pointer;
 }
 
 .hidden-text {
@@ -139,22 +176,22 @@ body {
     text-wrap: nowrap;
   }
 
-.collapsible {
-    border-radius: 25px 25px;
-    margin-top: 2%;
-    margin-left: 24%;
+  .collapsible {
+    display: block;
+    margin: 20px auto 0;
+    text-align: center;
+    width: 1000px;
+    max-width: 80%;
+    font-size: 1.5rem;
+    padding: 12px;
+    border-radius: 25px;
+    cursor: pointer;
     background-color: rgb(0, 138, 207);
     color: white;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 17px;
-    width: 52%;
     font-family: monospace;
-  }
+    border: none;
+}
+
   
 .collapsible:hover {
     background-color: white;
@@ -162,18 +199,33 @@ body {
   }
   
 .content {
-    padding: 0 18px;
+    /* padding: 0 18px; */
     /*display: none;*/
     overflow: hidden;
-    margin-left: 24%;
-    margin-right: 24%;
+    margin: 0px auto 0;
     background-color: rgb(255, 255, 255, 0.8);
     border: 0px solid rgb(0, 138, 207);
     font-size: 15px;
-    border-radius: 0px 0px 25px 25px;
+    border-radius: 0 0 25px 25px;
     transition: max-height 0.5s ease-out;
     max-height: 0;
-  }
+    width: 1000px;
+    max-width: 80%;
+    padding: 0 10px; /* Add some padding for the text */
+    box-sizing: border-box; /* Include padding in width calculation */
+
+ }
+
+ .collapsible.active {
+    border-radius: 25px 25px 0 0 !important;
+}
+
+div {
+    margin: 10px 0;
+    padding: 10px;
+    color: rgb(91, 113, 158);
+    font-family: monospace;
+}
 
 footer {
     padding: 10px;
@@ -835,3 +887,19 @@ span {
       opacity: 0;
     }
   }
+
+@media (max-width: 768px) {
+    .large-intro {
+        font-size: 150%;
+    }
+    .small-intro {
+        font-size: 100%;
+    }
+    #play-music {
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}
+
