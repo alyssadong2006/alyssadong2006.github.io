@@ -11,35 +11,7 @@ window.onload = function(){
     coll = document.getElementsByClassName('collapsible');
     con = document.getElementsByClassName('content');
     var i;
-
-    //collapsible on home screen
-    // for (i = 0; i < coll.length; i++) {
-    //     coll[i].addEventListener("click", function() {
-    //       this.classList.toggle("active");
-    //       var content = this.nextElementSibling;
-    //       /*if (content.style.display === "block") {
-    //         content.style.display = "none";
-    //       } else {
-    //         content.style.display = "block";
-    //       }*/
-    //       if (content.style.maxHeight){
-    //         content.style.maxHeight = null;
-    //       } else {
-    //         content.style.maxHeight = content.scrollHeight + "px";
-    //       } 
-          
-    //       if (this.style.borderRadius == "25px" || this.style.borderRadius == ""){
-    //         content.style.border = "5px solid rgb(0, 138, 207)"
-    //         this.style.borderRadius = "25px 25px 25px 25px";
-    //       } else if (this.style.borderRadius == "25px 25px 25px 25px"){
-    //         content.style.border = "5px solid rgb(0, 138, 207)"
-    //         setTimeout(() => {
-    //             this.style.borderRadius = "25px";
-    //             content.style.border = "0px solid rgb(0, 138, 207)"
-    //         }, 500);
-    //       }
-    //     });
-    // }
+    
     for (i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function() {
         this.classList.toggle("active");

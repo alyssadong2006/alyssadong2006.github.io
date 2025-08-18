@@ -95,7 +95,6 @@ img {
     width: 80%;
     margin: 3% auto;
     border: 5px solid white;
-    padding: 20px;
     background: white;
     border-radius: 25px;
     box-sizing: border-box;
@@ -114,7 +113,7 @@ img {
 }
 
 .intro img {
-    max-width: 40%;   /* set a nice size */
+    max-width: 25%;   /* set a nice size */
     height: auto;
     flex-shrink: 0;     /* don’t let it shrink too tiny */
     border-radius: 12px; /* optional: round edges */
@@ -124,8 +123,8 @@ img {
     text-align: left;
     flex: 1;
     font-size: 1.1rem;
-    line-height: 1.5;
-    max-width:60%;
+    line-height: 1.1;
+    max-width:75%;
 }
 
 
