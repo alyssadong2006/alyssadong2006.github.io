@@ -1,363 +1,245 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<title>Alyssa Dong's Portfolio</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="main.css">
-<!--<link rel= "stylesheet" href = "projects.css">-->
-<script type="text/javascript" src="main.js"></script>
-<!--<script type="text/javascript" src="projects.js"></script>-->
-
-<audio id="bgmusic" src="media/fire.mp3" type="audio/mp3" Hidden="true" loop="true"></audio> 
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Alyssa Dong is a software engineering intern and University of Waterloo student building thoughtful, useful software.">
+  <meta name="theme-color" content="#d8eff6">
+  <title>Alyssa Dong | Software Engineer</title>
+  <link rel="icon" href="media/avatar.png">
+  <link rel="stylesheet" href="main.css">
+  <script src="main.js" defer></script>
 </head>
 <body>
-<div class="topnav">
-	<b>
-	<a href="index.html">Home</a>
-	<a href="projects.html">Projects</a>
-	<a>Contact Me:</a>
-	<a>(647)648-6752</a>
-	<a>alydong2006@gmail.com</a>
-	<a href = "https://www.linkedin.com/in/alyssa-dong-00a2b2275/">LinkedIn</a>
-	<a href = "https://github.com/alyssadong2006">GitHub</a>
-	</b>
-</div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-nav shell" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Alyssa Dong, home">AD<span>.</span></a>
+      <div class="nav-links">
+        <a href="#experience">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="#about">About</a>
+        <a class="nav-contact" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
 
-<button id = "play-music" onclick="playMusic()"><b>Play Sound</b></button>
-
-<p id = "remind"><b>Click background to interact! (Fake ERROR404s)</b></p>
-	
-<div class = "intro">
-	<div class = "intro-bar">
-		<img class = "cross" id = "cross" src = "media/cross.png">
-		
-	</div>
-	<hr style="margin: 0; border: 0; border-top: 3px solid rgb(0, 138, 207);">
-	<div class = "intro-content">
-		
-		<img src = "media/avatar.png">
-		<div class = "intro-text">
-			<h1 class = "large-intro">
-				Hi, I'm Alyssa Dong. I code & paint.</h1>
-			<p class = "small-intro">I'm a software engineer based in Ontario, Canada. I program in Python (Django Web Dev), JavaScript, 
-				and GDScript (Godot Game Dev). I'm passionate about bringing convenience to our everyday lives through coding, feel free to 
-				connect with me anytime!
-			</p>
-		</div>
-	</div>
-</div>
-
-<p class = "hidden-text" id = "hidden-text"><b>Haha, this does nothing lol.</b></p>
-
-<button type="div" class="collapsible"><b>My Skills</b></button>
-
-<div class="content">
-  <div class="details">
-	<b>Programming Languages:</b> Python, GDScript, JavaScript, PHP, DrRacket, C, SQL<hr>
-	<b>Frameworks and Libraries:</b> Django, Flask, React, TensorFlow, NumPy, Pytest, Minds.js, Node.js<hr>
-	<b>Tools and Platforms:</b> Docker, Git, MariaDB, Bash, Linux, Azure, Windows <hr>
-	<b>Bilingual:</b> Fluent in both English and Mandarin (written and spoken)<hr>
-	<b>Leadership:</b> Co-founder of TastyByte Computing & Executive/Website Manager at PTERYX<hr>
-	<b>G2 Driver License</b>
-	<br>
-	<br>
-	<br>
+  <div class="beach-scene" aria-hidden="true">
+    <i class="pixel-sun"></i>
+    <i class="pixel-cloud cloud-one"></i>
+    <i class="pixel-cloud cloud-two"></i>
+    <i class="pixel-cloud cloud-three"></i>
+    <i class="pixel-bird bird-one"></i>
+    <i class="pixel-bird bird-two"></i>
+    <div class="beach-water water-base"></div>
+    <div class="beach-wave wave-far"></div>
+    <div class="beach-wave wave-middle"></div>
+    <div class="beach-wave wave-near"></div>
+    <div class="beach-foam foam-far"></div>
+    <div class="beach-foam foam-near"></div>
+    <div class="beach-sand"></div>
+    <div class="beach-sand-specks"></div>
+    <i class="pixel-shell shell-left"></i>
+    <i class="pixel-shell shell-right"></i>
+    <i class="pixel-seaglass"></i>
+    <i class="pixel-starfish"></i>
+    <i class="pixel-footsteps"></i>
+    <i class="pixel-seaweed"></i>
   </div>
-</div>
 
-<button type="div" class="collapsible"><b>Experience & Extracurriculars</b></button>
+  <main id="main" class="game-world">
+    <audio id="bgmusic" src="media/waves.mp3" loop preload="none"></audio>
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Player 1 · Software engineer · Waterloo, Ontario</p>
+        <h1 id="hero-title">I build software that makes complex things <span>feel simple.</span></h1>
+        <p class="hero-summary">I’m Alyssa, a University of Waterloo student who enjoys turning tricky problems into thoughtful, reliable products—from financial workflows to cross-platform apps and applied machine learning.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="projects.html">Start exploring <span aria-hidden="true">↗</span></a>
+          <a class="button button-quiet" href="mailto:alydong2006@gmail.com">Get in touch</a>
+          <button class="button button-quiet sound-toggle" id="sound-toggle" type="button" aria-pressed="false">Play ocean sounds <span aria-hidden="true">♫</span></button>
+        </div>
+        <p class="sound-status" id="sound-status" aria-live="polite"></p>
+        <div class="hero-links" aria-label="Professional profiles">
+          <a href="https://github.com/alyssadong2006" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <a href="https://www.linkedin.com/in/alyssa-dong-00a2b2275/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="mailto:alydong2006@gmail.com">Email <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-photo-wrap">
+          <img class="hero-photo" src="media/avatar.png" alt="Portrait of Alyssa Dong">
+        </div>
+        <img class="campfire-art" src="media/fireplace.png" alt="A tiny campfire glowing in the clouds">
+        <p class="photo-note"><span aria-hidden="true">✳</span> Developer by day, artist whenever I can</p>
+      </div>
+    </section>
 
-<div class="content">
-	<div class = "details">
-	<p>
-		<b>Garfay Social - Software Intern</b><br>
-		Engineered and enhanced core functionalities for Garfay Social, a niche social media platform designed to
-		foster increased engagement between businesses and users, supporting over 5,000 active beta users
+    <p class="game-hint shell"><span aria-hidden="true">✦</span> Click an empty spot to spawn a tiny 404 glitch!</p>
+    <p class="visually-hidden" id="game-status" aria-live="polite"></p>
 
-	</p>
-	<ul>
-		<li>
-			Led the migration of Garfay Social from the HumHub PHP framework with MariaDB (Version 1) to the Minds.js Node.js framework (Version 2)
-		</li>
-		<li>
-			Collaborated with a multidisciplinary team of University of Michigan and Stanford graduates to
-deliver an innovative, high-performance social media solution.
-		</li>
-	</ul>
-	<hr>
-	<p>
-		<b>Promach - Software Engineering Intern</b><br>
-		Developed and maintained the company website and engineered internal tools to optimize workflows for
-engineering and operations team.
+    <section class="intro-strip" aria-label="Career highlights">
+      <div class="shell intro-strip-inner">
+        <p>Currently building at <strong>Wealthsimple</strong></p>
+        <span aria-hidden="true">✳</span>
+        <p>Previously at <strong>Shopify</strong> &amp; <strong>Promach</strong></p>
+        <span aria-hidden="true">✳</span>
+        <p><strong>Applied Math + Scientific Computing + Machine Learning @ UWaterloo</strong></p>
+      </div>
+    </section>
 
-	</p>
-	<ul>
-		<li>
-			Designed and implemented Python-based internal tools to automate processes, including
-document generators and project management systems, improving team productivity by 30 percent.
-</li>
-		<li>
-			Partnered with senior engineers to program FANIC robotic systems, integrating them
-with PLCs to develop a high-efficiency stacking and boxing automation solution.
-		</li>
-	</ul>
-	<hr>
-	<p>
-		<b>TastyByte Computing - Co-founder</b><br>
-		A nonprofit organization dedicated to providing complimentary programming lessons for beginners.
-	</p>
-	<ul>
-		<li>
-			Completed the process of registering TastyByte Computing with the government after reading through the legal regulations carefully to ensure the legality of the organization
-		</li>
-		<li>
-			Developed and designed the organization’s website while also actively promoting TastyByte Computing.
-		</li>
-		<li>
-			Recruiting and conducting interviews for executive members, and structuring the organization.
-		</li>
-		<li>
-			Prepares and conducts free bi-weekly lessons in Python, HTML, CSS, and C++, instructing students in utilizing the Django Framework and managing the local deployment of a website.
-		</li>
-	</ul>
+    <section class="section shell" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Where I’ve made an impact</p>
+          <h2 id="experience-title">Experience</h2>
+        </div>
+        <p class="section-lede">A mix of product engineering, platform work, and automation—built with teams that care about the details.</p>
+      </div>
+      <div class="experience-list">
+        <article class="experience-card">
+          <div class="experience-meta">
+            <p class="experience-date">Sep 2026 — Present</p>
+            <span class="experience-mark" aria-hidden="true">W</span>
+          </div>
+          <div class="experience-body">
+            <h3>Software Engineering Intern <span>· Wealthsimple</span></h3>
+            <p class="experience-location">Canada</p>
+            <ul>
+              <li>Rebuilt equity order entry and review experiences in React Native and TypeScript, adding dynamic 25% / 50% / 75% / Max quantity presets and live bid/ask targets.</li>
+              <li>Expanded crypto order flows and reused native quote subscriptions with currency-aware caching to keep CAD/USD prices consistent.</li>
+              <li>Improved margin and cross-currency calculations, built debounced options buying-power checks, and strengthened screen-reader, focus, large-text, and reduced-motion support.</li>
+            </ul>
+            <div class="tag-list" aria-label="Technologies"><span>React Native</span><span>TypeScript</span><span>GraphQL</span></div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-meta">
+            <p class="experience-date">Jan 2026 — Apr 2026</p>
+            <span class="experience-mark" aria-hidden="true">S</span>
+          </div>
+          <div class="experience-body">
+            <h3>Software Engineering Intern <span>· Shopify</span></h3>
+            <p class="experience-location">Canada</p>
+            <ul>
+              <li>Built and shipped an end-to-end internal support escalation workflow across a Ruby routing service and a React / TypeScript advisor interface, improving correctly routed chat escalations by 13%.</li>
+              <li>Integrated Zendesk and Twilio with real-time routing logic, then developed an auditable event stream and secure, session-based PII access controls.</li>
+            </ul>
+            <div class="tag-list" aria-label="Technologies"><span>Ruby</span><span>React</span><span>TypeScript</span><span>GraphQL</span></div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-meta">
+            <p class="experience-date">May 2025 — Aug 2025</p>
+            <span class="experience-mark" aria-hidden="true">P</span>
+          </div>
+          <div class="experience-body">
+            <h3>Software Engineering Intern <span>· Promach</span></h3>
+            <p class="experience-location">China</p>
+            <ul>
+              <li>Extended a client-facing website with CMS features, optimized MySQL queries, and strengthened access controls and HTTPS/TLS configuration.</li>
+              <li>Programmed FANUC robotic arms and integrated them with PLC controllers for a stacking and boxing line, adding fail-safe interrupts and coordinated motion control.</li>
+            </ul>
+            <div class="tag-list" aria-label="Technologies"><span>MySQL</span><span>FANUC</span><span>PLC</span><span>EtherNet/IP</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
 
+    <section class="featured-section" aria-labelledby="featured-title">
+      <div class="shell section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">A few things I’ve made</p>
+            <h2 id="featured-title">Selected projects</h2>
+          </div>
+          <a class="text-link" href="projects.html">See all projects <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="project-grid featured-grid">
+          <article class="project-card featured-card">
+            <div class="project-card-top"><span class="project-index">01</span><span class="project-type">AI · Security</span></div>
+            <h3>SafeParse</h3>
+            <p>An AI-assisted web-content security gateway that combines safe browser ingestion, a fine-tuned classifier, and auditable threat reports.</p>
+            <div class="tag-list"><span>FastAPI</span><span>Playwright</span><span>PyTorch</span></div>
+            <a class="card-link" href="https://github.com/alyssadong2006/SafeParse-v2" target="_blank" rel="noopener noreferrer" aria-label="View SafeParse on GitHub">View project <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="project-card featured-card">
+            <div class="project-card-top"><span class="project-index">02</span><span class="project-type">Desktop · Native</span></div>
+            <h3>Waterloo Desktop Goose</h3>
+            <p>A playful desktop companion for macOS and Windows, with native overlays, window-aware navigation, physics, and custom pixel-art animation.</p>
+            <div class="tag-list"><span>Swift</span><span>C#</span><span>AppKit</span></div>
+            <a class="card-link" href="https://github.com/alyssadong2006/Waterloo-Desktop-Goose" target="_blank" rel="noopener noreferrer" aria-label="View Waterloo Desktop Goose on GitHub">View project <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="project-card featured-card">
+            <div class="project-card-top"><span class="project-index">03</span><span class="project-type">Android · Machine learning</span></div>
+            <h3>Moodii</h3>
+            <p>A speech emotion diary with an Android client, authenticated backend services, and an audio-classification pipeline.</p>
+            <div class="tag-list"><span>Kotlin</span><span>Spring Boot</span><span>TensorFlow</span></div>
+            <a class="card-link" href="https://github.com/BiancaBr7/Moodii/tree/dev" target="_blank" rel="noopener noreferrer" aria-label="View Moodii on GitHub">View project <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
 
-	<hr>
-	<p>
-		<b>PTERYX Foundation of Culture and Education - Website Manager and Executive</b><br>
-		PTERYX is a non-profit organization that is dedicated to supporting newcomer and minority youth by providing inclusive cultural events and various mental health related resources.
-	</p>
-	<ul>
-		<li>
-			Responsible for designing and improving the <b>UI/UX</b> of the foundation’s website
-		</li>
-		<li>
-			Implemented <b>PsychGPT</b> into the website. PsychGPT is an AI designed and coded by our organization.
-		</li>
-		<li>
-			Works collectively with fellow executives to coordinate events, secure funding, and supervise member management.
-		</li>
-		<li>
-			Collaborated with over <b>10+ organizations and highschools</b>, offering support to more than 3000 students across Canada.
-		</li>
-		<li>
-			Recruiting and conducting interviews for executive members
-		</li>
-	</ul>
+    <section class="section shell about-section" id="about" aria-labelledby="about-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">What I bring to the table</p>
+          <h2 id="about-title">Curiosity, craft &amp; a broad toolkit</h2>
+        </div>
+        <p class="section-lede">I like working across the stack: shaping a clear interface, making the underlying systems dependable, and measuring whether the result actually helps.</p>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-card">
+          <span class="skill-number">01</span>
+          <h3>Languages</h3>
+          <p>Python, TypeScript, JavaScript, Ruby, Java, Kotlin, Swift, C#, SQL, C</p>
+        </article>
+        <article class="skill-card">
+          <span class="skill-number">02</span>
+          <h3>Frameworks &amp; libraries</h3>
+          <p>React, React Native, FastAPI, Pydantic, Playwright, Django, Flask, Spring Boot, Jetpack Compose, AppKit, WinForms</p>
+        </article>
+        <article class="skill-card">
+          <span class="skill-number">03</span>
+          <h3>ML, data &amp; APIs</h3>
+          <p>PyTorch, Hugging Face, TensorFlow, Librosa, GraphQL, REST, WebSockets, MySQL, MongoDB, SQLite</p>
+        </article>
+        <article class="skill-card">
+          <span class="skill-number">04</span>
+          <h3>Tools &amp; infrastructure</h3>
+          <p>Git, Docker, GitHub Actions, CI/CD, Azure App Service, Linux, Bash, Pytest</p>
+        </article>
+      </div>
+      <div class="education-card">
+        <span class="education-icon" aria-hidden="true">✳</span>
+        <div>
+          <p class="eyebrow">Currently learning</p>
+          <h3>University of Waterloo</h3>
+          <p>Bachelor of Mathematics, Applied Mathematics with Scientific Computing and Machine Learning <span>· Sep 2024 — Present · Waterloo, ON</span></p>
+        </div>
+      </div>
+    </section>
 
-	<hr>
-	<p>
-		<b>Completed all Python courses at Sheridan College</b> (Outside of regular day school)<br>
-	</p>
-	<ul>
-		<li>Advanced Python - Django: 89%</li>
-		<li>Intermediate Python - Build App: 100%</li>
-		<li>Intro to Python Programming: 93%</li>
-	</ul>
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="shell contact-content">
+        <p class="eyebrow">Have a good problem to solve?</p>
+        <h2 id="contact-title">Let’s make something useful.</h2>
+        <p>I’m always happy to connect about thoughtful products, engineering, and new ideas.</p>
+        <a class="button button-light" href="mailto:alydong2006@gmail.com">alydong2006@gmail.com <span aria-hidden="true">↗</span></a>
+        <a class="contact-phone" href="tel:+16476486752">+1 647 648 6752</a>
+      </div>
+    </section>
+  </main>
 
-	<hr>
-	<p>
-		<b>Lifesaving Society Bronze Medallion </b>(Swimming)<br>
-	</p>
-	<ul>
-		<li>
-			Spanned over three continuous years, progressing from level 5 to achieving the Bronze Medallion
-		</li>
-		<li>
-			Acquired <b>Emergency First Aid Certificate</b>
-		</li>
-	</ul>
-
-	<hr>
-	<p>
-		<b>2023 Queen's University Summer Engineering Academy</b><br>
-		Learned the basics of <b>C++</b> and engineering (smoldering wires, redboards, etc.)
-	</p>
-
-	<hr>
-	<p>
-		<b>McDonalds - Customer Service</b><br>
-		Handled order-taking duties through the drive-thru and front counter, prepared drinks and desserts, managed opening and closing procedures for the stores, and was responsible for making fries. Thrived in a high-pressure, fast-paced work environment, contributing to the enhancement of teamwork and communication skills.
-	</p>
-	<br>
-	</div>
-	<br>
-</div>
-
-<button type="div" class="collapsible"><b>Awards</b></button>
-
-<div class="content">
-	<div class = "details">
-  <ul>
-	<li>2023 - National Youth Impact Challenge Top 10</li>
-	<li>2023 - University of Waterloo CEMC Fermat International Math Contest Top 25%</li>
-	<li>2023 - University of Waterloo CEMC Hypatia International Math Contest Top 25%</li>
-	<li>2022 - University of Waterloo CEMC Cayley International Math Contest Top 25%</li>
-	<li>2021 - University of Waterloo CEMC Fryer International Math Contest Honors Roll</li>
-	<li>2021 - University of Waterloo CEMC Fryer International Math Contest Top 25%</li>
-	<li>2019 - China National Odyssey of the Mind Third Prize</li>
-	<li>2018 - China National Odyssey of the Mind Third Prize</li>
-	<li>2017 - China National Destination Imagination Renaissance Award</li>
-  </ul>
-  <br>
-  <br>
-  <br>
-  </div>
-</div>
-
-</div>
-
-<div id="cursor">
-</div>
-
-<div class="stage" id = "fireplace">
-	<div class="campfire">
-	  <div class="sparks">
-		<div class="spark"></div>
-		<div class="spark"></div>
-		<div class="spark"></div>
-		<div class="spark"></div>
-		<div class="spark"></div>
-		<div class="spark"></div>
-		<div class="spark"></div>
-		<div class="spark"></div>
-	  </div>
-	  <div class="logs">
-		<div class="log">
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		</div>
-		<div class="log">
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		</div>
-		<div class="log">
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		</div>
-		<div class="log">
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		</div>
-		<div class="log">
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		</div>
-		<div class="log">
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		</div>
-		<div class="log">
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		  <div class="streak"></div>
-		</div>
-	  </div>
-	  <div class="sticks">
-		<div class="stick"></div>
-		<div class="stick"></div>
-		<div class="stick"></div>
-		<div class="stick"></div>
-	  </div>
-	  <div class="fire">
-		<div class="fire__red">
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		</div>
-		<div class="fire__orange">
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		</div>
-		<div class="fire__yellow">
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		</div>
-		<div class="fire__white">
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		  <div class="flame"></div>
-		</div>
-	  </div>
-	</div>
-</div>
-
+  <footer class="site-footer shell">
+    <a class="brand footer-brand" href="index.html">AD<span>.</span></a>
+    <p>Designed and built by Alyssa Dong · <span id="current-year">2026</span></p>
+    <div class="footer-links">
+      <a href="https://github.com/alyssadong2006" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/alyssa-dong-00a2b2275/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:alydong2006@gmail.com">Email</a>
+    </div>
+  </footer>
 </body>
-
-<footer>
-    <b>Website programmed by Alyssa Dong &copy2024</b>
-</footer>
 </html>

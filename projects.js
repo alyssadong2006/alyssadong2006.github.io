@@ -1,35 +1,28 @@
-document.addEventListener("mousemove", (e) => {
-	let body = document.querySelector("body");
-	let circle = document.createElement("span");
-	let x = e.pageX;
-	let y = e.pageY;
-	document.querySelector("#cursor").style.left = x + "px";
-	document.querySelector("#cursor").style.top = y + "px";
-	circle.style.left = x + "px";
-	circle.style.top = y + "px";
-	let size = Math.random() * Math.floor(Math.random() * (100 - 10 + 1) + 10);
-	circle.style.width = 20 + size + "px";
-	circle.style.height = 20 + size + "px";
-    circle.style.zIndex = -1;
-    body.appendChild(circle);
-	
-	setTimeout(() => {
-		circle.style.opacity = 0;
-		setTimeout(() => {
-			circle.remove();
-		}, 2500);
-	}, 2500);
-});
+const filters = document.querySelectorAll(".filter-button");
+const projectCards = document.querySelectorAll(".project-detail-card");
+const projectCount = document.getElementById("project-count");
+const emptyState = document.getElementById("empty-state");
 
-function playMusic() {
-	var audio = document.getElementById("bgmusicTwo");
-	var bttn = document.getElementById("play-musicTwo")
-	if (bttn.innerHTML == "<b>Play Sound</b>"){
-	  bttn.innerHTML = "<b>Stop Sound</b>";
-	  audio.play();
-	} else {
-	  bttn.innerHTML = "<b>Play Sound</b>";
-	  audio.pause();
-	}
-	
-  }
+function showProjects(category) {
+  let visibleCount = 0;
+
+  projectCards.forEach((card) => {
+    const categories = card.dataset.category.split(" ");
+    const isVisible = category === "all" || categories.includes(category);
+    card.hidden = !isVisible;
+    if (isVisible) visibleCount += 1;
+  });
+
+  filters.forEach((filter) => {
+    const isSelected = filter.dataset.filter === category;
+    filter.classList.toggle("is-active", isSelected);
+    filter.setAttribute("aria-pressed", String(isSelected));
+  });
+
+  projectCount.textContent = `Showing ${visibleCount} ${visibleCount === 1 ? "project" : "projects"}`;
+  emptyState.hidden = visibleCount > 0;
+}
+
+filters.forEach((filter) => {
+  filter.addEventListener("click", () => showProjects(filter.dataset.filter));
+});
