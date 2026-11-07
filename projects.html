@@ -9,6 +9,11 @@
   <link rel="icon" href="media/avatar.png">
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="projects.css">
+  <link rel="stylesheet" href="daylight-theme.css">
+  <link rel="stylesheet" href="cute-daylight.css">
+  <script type="module" src="theme-switch.js"></script>
+  <script type="module" src="sunflower-trail.js"></script>
+  <script type="module" src="ocean-world.js"></script>
   <script src="main.js" defer></script>
   <script src="projects.js" defer></script>
 </head>
@@ -61,7 +66,7 @@
 
     <section class="shell projects-content" aria-label="Project portfolio">
       <div class="project-toolbar">
-        <p class="project-count" id="project-count" aria-live="polite">Showing all 6 projects</p>
+        <p class="project-count" id="project-count" aria-live="polite">Showing all 7 projects</p>
         <div class="project-filters" role="group" aria-label="Filter projects">
           <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All work</button>
           <button class="filter-button" type="button" data-filter="ai" aria-pressed="false">AI &amp; ML</button>
@@ -71,8 +76,22 @@
       </div>
 
       <div class="project-grid all-projects" id="project-grid">
+        <article class="project-card project-detail-card" data-category="ai apps">
+          <div class="project-visual visual-platformer" aria-hidden="true"><span>01</span><strong>Platformer<br>Evolution Lab</strong><i>BUILD · EVOLVE · EXPLORE</i></div>
+          <div class="project-card-top"><span class="project-type">Neuroevolution · Interactive simulation</span></div>
+          <h2>Platformer Evolution Lab</h2>
+          <p>An interactive experiment where populations of neural-network agents attempt user-designed platform levels. Agents sense obstacles, goal direction, and motion to choose when to steer and jump, while selection and mutation evolve their brains between generations.</p>
+          <ul class="project-highlights">
+            <li>Connected 13 sensor inputs to a 16-node hidden layer and three action outputs for left, right, and jump.</li>
+            <li>Preserved elite agents and generated new brains through crossover and mutation, using progress and goal completion to score attempts.</li>
+            <li>Simulated populations of 20–30 agents with fixed-step physics and generation-based training.</li>
+          </ul>
+          <div class="tag-list"><span>TypeScript</span><span>React</span><span>Vite</span><span>Neural networks</span><span>Genetic algorithms</span></div>
+          <a class="card-link" href="https://github.com/alyssadong2006/Platformer-Evolution-Lab" target="_blank" rel="noopener noreferrer">Explore Platformer Evolution Lab on GitHub <span aria-hidden="true">↗</span></a>
+        </article>
+
         <article class="project-card project-detail-card" data-category="ai tools">
-          <div class="project-visual visual-safeparse" aria-hidden="true"><span>01</span><strong>Safe<span>Parse</span></strong><i>AI × WEB SAFETY</i></div>
+          <div class="project-visual visual-safeparse" aria-hidden="true"><span>02</span><strong>SafeParse</strong><i>AI × WEB SAFETY</i></div>
           <div class="project-card-top"><span class="project-type">AI · Security · Developer tool</span><span class="project-status">Featured</span></div>
           <h2>SafeParse — AI Web-Content Security Gateway</h2>
           <p>An asynchronous FastAPI and Playwright gateway that evaluates web content with structural, Unicode, heuristic, and machine-learning signals. It isolates browser requests, checks resolved addresses and redirects, and returns auditable reports with evidence offsets.</p>
@@ -86,7 +105,7 @@
         </article>
 
         <article class="project-card project-detail-card" data-category="tools apps">
-          <div class="project-visual visual-goose" aria-hidden="true"><span>02</span><strong>Desktop Goose</strong><i>MACOS + WINDOWS</i></div>
+          <div class="project-visual visual-goose" aria-hidden="true"><span>03</span><strong>Desktop Goose</strong><i>MACOS + WINDOWS</i></div>
           <div class="project-card-top"><span class="project-type">Desktop · Native apps</span><span class="project-status">Featured</span></div>
           <h2>Waterloo Desktop Goose</h2>
           <p>A tiny cross-platform desktop companion built with native macOS and Windows applications. The goose can wander, perch on live window geometry, be picked up and thrown, and interact with a world of animated characters.</p>
@@ -100,7 +119,7 @@
         </article>
 
         <article class="project-card project-detail-card" data-category="ai apps">
-          <div class="project-visual visual-moodii" aria-hidden="true"><span>03</span><strong>Moodii</strong><i>VOICE · MOOD · JOURNAL</i></div>
+          <div class="project-visual visual-moodii" aria-hidden="true"><span>04</span><strong>Moodii</strong><i>VOICE · MOOD · JOURNAL</i></div>
           <div class="project-card-top"><span class="project-type">Android · Machine learning</span><span class="project-status">Featured</span></div>
           <h2>Moodii — Speech Emotion Diary</h2>
           <p>An Android audio diary that connects a Jetpack Compose client to authenticated Spring Boot and machine-learning services. Users can record entries, explore mood history, and receive emotion predictions from speech.</p>
@@ -114,7 +133,7 @@
         </article>
 
         <article class="project-card project-detail-card" data-category="apps">
-          <div class="project-visual visual-mapabled" aria-hidden="true"><span>04</span><strong>MapAbled</strong><i>ACCESSIBILITY, MAPPED</i></div>
+          <div class="project-visual visual-mapabled" aria-hidden="true"><span>05</span><strong>MapAbled</strong><i>ACCESSIBILITY, MAPPED</i></div>
           <div class="project-card-top"><span class="project-type">Web app · Accessibility</span></div>
           <h2>MapAbled</h2>
           <p>A community-driven map for discovering and sharing accessible establishments. A camera-based sign-reading feature uses OCR and text-to-speech to make on-the-go information easier to access.</p>
@@ -123,7 +142,7 @@
         </article>
 
         <article class="project-card project-detail-card" data-category="ai apps">
-          <div class="project-visual visual-study" aria-hidden="true"><span>05</span><strong>Study together</strong><i>STUDDY BUDDY</i></div>
+          <div class="project-visual visual-study" aria-hidden="true"><span>06</span><strong>Study together</strong><i>STUDDY BUDDY</i></div>
           <div class="project-card-top"><span class="project-type">Web app · Education</span></div>
           <h2>Studdy Buddy</h2>
           <p>A study-partner matching platform that connects students by academic goals, courses, learning styles, and availability. It also supports session scheduling and progress leaderboards.</p>
@@ -132,7 +151,7 @@
         </article>
 
         <article class="project-card project-detail-card" data-category="apps">
-          <div class="project-visual visual-report" aria-hidden="true"><span>06</span><strong>Speak up</strong><i>REPORT BULLYING</i></div>
+          <div class="project-visual visual-report" aria-hidden="true"><span>07</span><strong>Speak up</strong><i>REPORT BULLYING</i></div>
           <div class="project-card-top"><span class="project-type">Web app · Community</span></div>
           <h2>Report Bullying Webapp</h2>
           <p>A Django reporting website built with a collaborator to help students share bullying concerns with schools and organizations. Automatic translation helps reduce language barriers in the reporting process.</p>

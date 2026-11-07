@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 230" fill="none">
+  <defs>
+    <linearGradient id="stem" x1="15" y1="80" x2="42" y2="225" gradientUnits="userSpaceOnUse"><stop stop-color="#567c3d"/><stop offset=".5" stop-color="#88ad57"/><stop offset="1" stop-color="#3c714e"/></linearGradient>
+    <linearGradient id="leaf" x1="0" y1="0" x2="25" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#b2d27c"/><stop offset=".45" stop-color="#76aa63"/><stop offset="1" stop-color="#36664c"/></linearGradient>
+    <linearGradient id="petal" x1="0" y1="-39" x2="0" y2="-11" gradientUnits="userSpaceOnUse"><stop stop-color="#fff6b0"/><stop offset=".38" stop-color="#ffcf53"/><stop offset="1" stop-color="#dc903c"/></linearGradient>
+    <radialGradient id="heart" cx=".32" cy=".25" r=".85"><stop stop-color="#b28050"/><stop offset=".48" stop-color="#785239"/><stop offset="1" stop-color="#49342e"/></radialGradient>
+    <pattern id="seeds" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#efd19c" opacity=".6"/><circle cx="4" cy="5" r="1" fill="#392d29" opacity=".5"/></pattern>
+    <path id="petal-shape" d="M-6-14C-17-22-12-39 0-42C12-36 15-23 6-14C2-10-2-10-6-14Z" fill="url(#petal)" stroke="#d99a40" stroke-width=".6"/>
+    <g id="leaf-shape"><path d="M0 18C-3 4 9-3 25 0C22 16 12 24 0 18Z" fill="url(#leaf)"/><path d="M1 18 20 4M9 12 8 5M13 9 20 10" stroke="#d6e6a6" stroke-width=".9" opacity=".65"/></g>
+  </defs>
+  <path d="M44 54C45 79 17 87 23 113C29 136 45 139 28 164C11 186 19 200 36 222" stroke="#395c42" stroke-width="6" opacity=".18" transform="translate(2 2)"/>
+  <path d="M44 54C45 79 17 87 23 113C29 136 45 139 28 164C11 186 19 200 36 222" stroke="url(#stem)" stroke-width="4" stroke-linecap="round"/>
+  <use href="#leaf-shape" transform="translate(37 69) rotate(15)"/>
+  <use href="#leaf-shape" transform="translate(29 98) rotate(-100) scale(.9)"/>
+  <use href="#leaf-shape" transform="translate(29 119) rotate(12) scale(1.1)"/>
+  <use href="#leaf-shape" transform="translate(33 145) rotate(-110)"/>
+  <use href="#leaf-shape" transform="translate(26 161) rotate(30) scale(.9)"/>
+  <use href="#leaf-shape" transform="translate(20 192) rotate(-90) scale(.75)"/>
+  <use href="#leaf-shape" transform="translate(33 202) rotate(10) scale(.7)"/>
+  <g transform="translate(49 46)">
+    <g transform="translate(1 3)" opacity=".15"><circle r="37" fill="#65452e"/></g>
+    <use href="#petal-shape"/><use href="#petal-shape" transform="rotate(30)"/><use href="#petal-shape" transform="rotate(60)"/><use href="#petal-shape" transform="rotate(90)"/><use href="#petal-shape" transform="rotate(120)"/><use href="#petal-shape" transform="rotate(150)"/><use href="#petal-shape" transform="rotate(180)"/><use href="#petal-shape" transform="rotate(210)"/><use href="#petal-shape" transform="rotate(240)"/><use href="#petal-shape" transform="rotate(270)"/><use href="#petal-shape" transform="rotate(300)"/><use href="#petal-shape" transform="rotate(330)"/>
+    <circle r="17" fill="url(#heart)" stroke="#d2a15e" stroke-width="1.4"/>
+    <circle r="15" fill="url(#seeds)"/>
+    <path d="M-12-7C-9-13-2-15 4-13" stroke="#f4d697" stroke-width="1.4" stroke-linecap="round" opacity=".6"/>
+  </g>
+</svg>

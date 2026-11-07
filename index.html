@@ -8,7 +8,16 @@
   <title>Alyssa Dong | Software Engineer</title>
   <link rel="icon" href="media/avatar.png">
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="beach-3d.css">
+  <link rel="stylesheet" href="daylight-theme.css">
+  <link rel="stylesheet" href="cute-daylight.css">
+  <link rel="stylesheet" href="company-logos.css">
+  <link rel="stylesheet" href="floral-frame.css">
+  <script type="module" src="theme-switch.js"></script>
+  <script type="module" src="sunflower-trail.js"></script>
+  <script type="module" src="ocean-world.js"></script>
   <script src="main.js" defer></script>
+  <script type="module" src="beach-3d.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -66,12 +75,26 @@
           <a href="mailto:alydong2006@gmail.com">Email <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-      <div class="hero-art">
-        <div class="hero-photo-wrap">
-          <img class="hero-photo" src="media/avatar.png" alt="Portrait of Alyssa Dong">
+      <div class="hero-art beach-diorama">
+        <div class="frame-botanicals" aria-hidden="true">
+          <span class="frame-garland"></span>
+          <span class="frame-flora frame-flora-left"></span>
+          <span class="frame-flora frame-flora-left-bud"></span>
+          <span class="frame-flora frame-flora-right"></span>
+          <span class="frame-flora frame-flora-right-bud"></span>
+          <span class="frame-flora frame-flora-bottom-left"></span>
+          <span class="frame-flora frame-flora-bottom-right"></span>
         </div>
-        <img class="campfire-art" src="media/fireplace.png" alt="A tiny campfire glowing in the clouds">
-        <p class="photo-note"><span aria-hidden="true">✳</span> Developer by day, artist whenever I can</p>
+        <button class="diorama-switch" id="diorama-switch" type="button" aria-label="Switch to the 3D beach theme" aria-pressed="false"><span class="visually-hidden">Change the scenery</span></button>
+        <div class="diorama-heading"><span aria-hidden="true">✳</span> A little place to slow down <span class="diorama-coordinate">ISLAND 01</span></div>
+        <div id="beach-viewport" class="beach-viewport" role="img" aria-label="A beach diorama with palm trees, a striped umbrella, diving equipment, seashells, circling seabirds, and turquoise waves.">
+          <div class="beach-fallback" aria-hidden="true"><span>🌴</span><span>🏖️</span><span>🐚</span></div>
+        </div>
+        <div class="diorama-footer">
+          <img src="media/avatar.png" alt="Portrait of Alyssa Dong" width="40" height="40">
+          <p>Nothing beats a beach day<br><strong>after a good dive.</strong></p>
+          <span class="diorama-hint" id="diorama-hint">↖ Click to switch to 3D</span>
+        </div>
       </div>
     </section>
 
@@ -100,7 +123,7 @@
         <article class="experience-card">
           <div class="experience-meta">
             <p class="experience-date">Sep 2026 — Present</p>
-            <span class="experience-mark" aria-hidden="true">W</span>
+            <span class="experience-mark company-logo" aria-hidden="true"><img src="media/wealthsimple-logo.svg" alt="" width="112" height="20" loading="lazy"></span>
           </div>
           <div class="experience-body">
             <h3>Software Engineering Intern <span>· Wealthsimple</span></h3>
@@ -116,7 +139,7 @@
         <article class="experience-card">
           <div class="experience-meta">
             <p class="experience-date">Jan 2026 — Apr 2026</p>
-            <span class="experience-mark" aria-hidden="true">S</span>
+            <span class="experience-mark company-logo" aria-hidden="true"><img src="media/shopify-logo.svg" alt="" width="106" height="30" loading="lazy"></span>
           </div>
           <div class="experience-body">
             <h3>Software Engineering Intern <span>· Shopify</span></h3>
@@ -131,7 +154,7 @@
         <article class="experience-card">
           <div class="experience-meta">
             <p class="experience-date">May 2025 — Aug 2025</p>
-            <span class="experience-mark" aria-hidden="true">P</span>
+            <span class="experience-mark company-logo" aria-hidden="true"><img src="media/promach-logo.png" alt="" width="106" height="34" loading="lazy"></span>
           </div>
           <div class="experience-body">
             <h3>Software Engineering Intern <span>· Promach</span></h3>
@@ -157,25 +180,25 @@
         </div>
         <div class="project-grid featured-grid">
           <article class="project-card featured-card">
-            <div class="project-card-top"><span class="project-index">01</span><span class="project-type">AI · Security</span></div>
+            <div class="project-card-top"><span class="project-index">01</span><span class="project-type">AI · Neuroevolution</span></div>
+            <h3>Platformer Evolution Lab</h3>
+            <p>An interactive platformer experiment where neural-network agents tackle user-designed levels, evolving their movement through selection, crossover, and mutation.</p>
+            <div class="tag-list"><span>TypeScript</span><span>React</span><span>Genetic algorithms</span></div>
+            <a class="card-link" href="https://github.com/alyssadong2006/Platformer-Evolution-Lab" target="_blank" rel="noopener noreferrer" aria-label="View Platformer Evolution Lab on GitHub">View project <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="project-card featured-card">
+            <div class="project-card-top"><span class="project-index">02</span><span class="project-type">AI · Security</span></div>
             <h3>SafeParse</h3>
             <p>An AI-assisted web-content security gateway that combines safe browser ingestion, a fine-tuned classifier, and auditable threat reports.</p>
             <div class="tag-list"><span>FastAPI</span><span>Playwright</span><span>PyTorch</span></div>
             <a class="card-link" href="https://github.com/alyssadong2006/SafeParse-v2" target="_blank" rel="noopener noreferrer" aria-label="View SafeParse on GitHub">View project <span aria-hidden="true">↗</span></a>
           </article>
           <article class="project-card featured-card">
-            <div class="project-card-top"><span class="project-index">02</span><span class="project-type">Desktop · Native</span></div>
+            <div class="project-card-top"><span class="project-index">03</span><span class="project-type">Desktop · Native</span></div>
             <h3>Waterloo Desktop Goose</h3>
             <p>A playful desktop companion for macOS and Windows, with native overlays, window-aware navigation, physics, and custom pixel-art animation.</p>
             <div class="tag-list"><span>Swift</span><span>C#</span><span>AppKit</span></div>
             <a class="card-link" href="https://github.com/alyssadong2006/Waterloo-Desktop-Goose" target="_blank" rel="noopener noreferrer" aria-label="View Waterloo Desktop Goose on GitHub">View project <span aria-hidden="true">↗</span></a>
-          </article>
-          <article class="project-card featured-card">
-            <div class="project-card-top"><span class="project-index">03</span><span class="project-type">Android · Machine learning</span></div>
-            <h3>Moodii</h3>
-            <p>A speech emotion diary with an Android client, authenticated backend services, and an audio-classification pipeline.</p>
-            <div class="tag-list"><span>Kotlin</span><span>Spring Boot</span><span>TensorFlow</span></div>
-            <a class="card-link" href="https://github.com/BiancaBr7/Moodii/tree/dev" target="_blank" rel="noopener noreferrer" aria-label="View Moodii on GitHub">View project <span aria-hidden="true">↗</span></a>
           </article>
         </div>
       </div>
@@ -212,7 +235,7 @@
         </article>
       </div>
       <div class="education-card">
-        <span class="education-icon" aria-hidden="true">✳</span>
+        <span class="education-icon university-logo" aria-hidden="true"><img src="media/waterloo-logo.svg" alt="" width="132" height="32" loading="lazy"></span>
         <div>
           <p class="eyebrow">Currently learning</p>
           <h3>University of Waterloo</h3>

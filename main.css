@@ -1374,7 +1374,8 @@ body {
 }
 
 main,
-.site-footer {
+.site-footer,
+.project-contact {
   position: relative;
   z-index: 1;
 }

@@ -140,10 +140,6 @@
   line-height: 1.1;
 }
 
-.project-visual strong span {
-  color: #c2f6dd;
-}
-
 .project-visual i {
   margin-top: 0.6rem;
   color: rgb(255 255 255 / 83%);
@@ -417,6 +413,17 @@
   background-color: #f2c5bd;
   background-image: linear-gradient(90deg, transparent 96%, rgb(255 255 255 / 25%) 96%), linear-gradient(transparent 96%, rgb(255 255 255 / 25%) 96%), linear-gradient(130deg, #db9c9b, #f4d6bb);
   background-size: 18px 18px, 18px 18px, auto;
+}
+
+.visual-platformer {
+  background: linear-gradient(145deg, #e1d5f4, #c2e7dc);
+  color: #465a69;
+}
+
+.visual-platformer::after {
+  border-radius: 0;
+  background: #a6c7ab;
+  box-shadow: -40px 20px 0 #d1b7e8, 40px -20px 0 #f3d6a2;
 }
 
 .project-type {

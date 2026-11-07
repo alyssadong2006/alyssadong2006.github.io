@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 500" preserveAspectRatio="none" shape-rendering="crispEdges">
+<defs>
+  <g id="leaf"><path d="M0 0v-12h6v-6h18v12h-6v6Z" fill="#64995b"/><path d="M6-12v-6h18v6H12v6H6Z" fill="#a4ca7b"/></g>
+  <g id="sprig"><path d="M4 0h4v16h8v24H8v20H4v24h8v28H8V88H0V56h4V36h8V20H4Z" fill="#4c784e"/><use href="#leaf" transform="translate(12 18)"/><use href="#leaf" transform="translate(6 40) scale(-.8 .8)"/><use href="#leaf" transform="translate(4 62)"/><use href="#leaf" transform="translate(8 88) scale(-.8 .8)"/><use href="#leaf" transform="translate(10 108) scale(.7)"/></g>
+  <g id="bloom"><path d="M-8-20H8v8h12V8H8v12H-8V8h-12v-20h12Z" fill="#c983a0"/><path d="M-8-20H8v8h8v8H8V8H-8V-4h-8v-8h8Z" fill="#f2bfcb"/><path d="M-4-4H4V4H-4Z" fill="#f5d16e"/></g>
+  <g id="daisy"><path d="M-4-16H4v8h12V4H4v12H-4V4h-12V-8h12Z" fill="#e9d7a7"/><path d="M-4-16H4v8h8v4H4V4H-4V-4h-8v-4h8Z" fill="#fff4db"/><path d="M-4-4H4V4H-4Z" fill="#e6b74e"/></g>
+  <g id="lavender"><path d="M-2-12H2v44H-2Z" fill="#78995e"/><path d="M-4-20H4v8H-4ZM-8-8H8V0H-8ZM-8 4H8v8H-8Z" fill="#a995c9"/><path d="M-4-20H0v8H-4ZM-8-8H-4V0H-8ZM-8 4H-4v8H-8Z" fill="#d2c0e8"/></g>
+</defs>
+<path d="M16 16h44V8h56v8h76V8h76v8h76v8h56V12h64v4h-60v12h-64v-8h-76v-8h-68v8h-84v-8H64v8H16ZM16 476h56v8h76v-8h68v12h76v-8h88v-8h84v4h-80v8h-88v8h-84v-12h-60v8H68v-8H16Z" fill="#598650"/>
+<use href="#sprig" transform="translate(8 52)"/><use href="#sprig" transform="translate(6 166)"/><use href="#sprig" transform="translate(6 280)"/><use href="#sprig" transform="translate(8 390) scale(.8)"/>
+<use href="#sprig" transform="translate(472 44) scale(-1 1)"/><use href="#sprig" transform="translate(476 156) scale(-1 1)"/><use href="#sprig" transform="translate(476 272) scale(-1 1)"/><use href="#sprig" transform="translate(472 390) scale(-.8 .8)"/>
+<use href="#sprig" transform="translate(72 12) rotate(-90) scale(.8)"/><use href="#sprig" transform="translate(192 12) rotate(-90) scale(.8)"/><use href="#sprig" transform="translate(336 16) rotate(-90) scale(.8)"/>
+<use href="#sprig" transform="translate(64 488) rotate(-90) scale(.9)"/><use href="#sprig" transform="translate(192 488) rotate(-90) scale(.9)"/><use href="#sprig" transform="translate(332 484) rotate(-90) scale(.9)"/>
+<use href="#bloom" transform="translate(24 112) scale(.8)"/><use href="#daisy" transform="translate(8 192) scale(.8)"/><use href="#lavender" transform="translate(12 248)"/><use href="#bloom" transform="translate(16 364) scale(.7)"/>
+<use href="#daisy" transform="translate(464 140) scale(.8)"/><use href="#bloom" transform="translate(472 244) scale(.75)"/><use href="#lavender" transform="translate(468 328)"/><use href="#daisy" transform="translate(472 404) scale(.7)"/>
+<use href="#bloom" transform="translate(116 12) scale(.8)"/><use href="#daisy" transform="translate(232 8) scale(.65)"/><use href="#bloom" transform="translate(356 16) scale(.7)"/>
+<use href="#bloom" transform="translate(88 488)"/><use href="#daisy" transform="translate(144 488) scale(.8)"/><use href="#lavender" transform="translate(208 488) rotate(-90) scale(.75)"/><use href="#bloom" transform="translate(288 488) scale(.8)"/><use href="#daisy" transform="translate(384 484)"/>
+</svg>
