@@ -1,0 +1,82 @@
+/* The overflowing garden follows the same dimension as the rest of the page. */
+.hero-art.beach-diorama { overflow: visible; }
+.frame-botanicals { position: absolute; z-index: 4; inset: 0; pointer-events: none; }
+.frame-garland {
+  position: absolute;
+  inset: -10px -7px -14px;
+  background: url("media/frame-garden-pixel.svg") center / 100% 100% no-repeat;
+  filter: drop-shadow(2px 2px 0 rgb(55 80 43 / 20%));
+  image-rendering: pixelated;
+  pointer-events: none;
+}
+.frame-flora {
+  position: absolute;
+  display: block;
+  background: url("media/frame-flora-pixel.svg") center / contain no-repeat;
+  pointer-events: none;
+  filter: drop-shadow(2px 3px 0 rgb(72 85 51 / 20%));
+  image-rendering: pixelated;
+}
+.frame-flora-left { top: -25px; left: -17px; width: 90px; height: 173px; }
+.frame-flora-right { top: -13px; right: -17px; width: 76px; height: 146px; transform: scaleX(-1); }
+.frame-flora-left-bud { top: -28px; left: 39px; width: 52px; height: 100px; }
+.frame-flora-right-bud { top: -25px; right: 38px; width: 48px; height: 92px; transform: scaleX(-1); }
+.frame-flora-bottom-left { bottom: -22px; left: -13px; width: 64px; height: 123px; transform: rotate(180deg); }
+.frame-flora-bottom-right { bottom: -23px; right: -14px; width: 70px; height: 134px; transform: rotate(180deg) scaleX(-1); }
+body:not(.daylight-theme) .hero-art.beach-diorama {
+  border: 6px solid #d8b384;
+  border-radius: 0;
+  box-shadow: 0 0 0 2px #8d7558, 6px 6px 0 #aa8c69;
+}
+body:not(.daylight-theme) .diorama-footer { border-top: 3px solid #d8b384; background: #f9f5df; }
+.diorama-heading { min-height: 64px; padding: 32px 20px 0 72px; gap: 6px; }
+.diorama-footer { padding-bottom: 32px; }
+.diorama-footer > * { position: relative; z-index: 5; }
+.diorama-footer p, .diorama-footer .diorama-hint {
+  padding: 3px 4px;
+  border-radius: 0;
+  background: #f9f5df;
+}
+.diorama-heading > span:first-child { display: none; }
+.diorama-coordinate { margin-right: 23px; font-size: 10px; letter-spacing: 0.6px; }
+.diorama-heading { font-size: 13px; }
+.daylight-theme .hero-art.beach-diorama {
+  border: 7px solid #efd2b0;
+  border-radius: 24px;
+  box-shadow: 0 0 0 2px #c7a382, inset 0 0 0 2px #fff9ee,
+    0 5px 0 #c7a382, 0 26px 50px rgb(60 86 97 / 22%);
+}
+.daylight-theme .frame-flora {
+  background-image: url("media/frame-flora-smooth.svg");
+  filter: drop-shadow(2px 4px 2px rgb(58 79 45 / 22%));
+  image-rendering: auto;
+}
+.daylight-theme .frame-garland {
+  background-image: url("media/frame-garden-smooth.svg");
+  filter: drop-shadow(1px 3px 1px rgb(55 80 43 / 22%));
+  image-rendering: auto;
+}
+.daylight-theme .frame-flora-left-bud { transform: rotate(-14deg); }
+.daylight-theme .frame-flora-right-bud { transform: scaleX(-1) rotate(-12deg); }
+.daylight-theme .diorama-footer {
+  border-radius: 0 0 16px 16px;
+  border-color: #efd2b0;
+  background: linear-gradient(135deg, #fff8e8, #edf6ee);
+}
+.daylight-theme .diorama-footer p, .daylight-theme .diorama-footer .diorama-hint {
+  border-radius: 4px;
+  background: #f6f8eb;
+}
+.daylight-theme .diorama-heading { font-size: 12px; }
+.daylight-theme .diorama-coordinate { font-size: 9px; }
+@media (max-width: 680px) {
+  .diorama-heading { padding-left: 65px; padding-right: 40px; font-size: 13px; }
+  .frame-flora-left-bud { width: 43px; height: 82px; left: 33px; top: -24px; }
+  .frame-flora-right-bud { width: 40px; height: 77px; right: 30px; top: -21px; }
+  .frame-flora-bottom-left { width: 54px; height: 104px; left: -10px; bottom: -19px; }
+  .frame-flora-bottom-right { width: 58px; height: 111px; right: -11px; bottom: -20px; }
+  .diorama-coordinate { display: none; }
+  .daylight-theme .diorama-heading { font-size: 12px; }
+  .frame-flora-left { width: 80px; height: 154px; left: -15px; top: -23px; }
+  .frame-flora-right { width: 68px; height: 131px; right: -15px; top: -12px; }
+}

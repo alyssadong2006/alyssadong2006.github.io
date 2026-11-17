@@ -1,0 +1,26 @@
+.impact-fx{position:fixed;inset:0;z-index:40;pointer-events:none;overflow:hidden;visibility:hidden;--ix:50vw;--iy:50vh;contain:strict}
+.impact-fx.on{visibility:visible}
+.impact-fx i{position:absolute;left:var(--ix);top:var(--iy);width:40vmax;height:40vmax;margin:-20vmax 0 0 -20vmax;border-radius:50%;opacity:0;will-change:transform,opacity}
+.impact-fx .ifx-glow{background:radial-gradient(circle,rgba(255,170,215,.38),rgba(210,180,255,.16) 40%,transparent 68%)}
+.impact-fx .ifx-ring{border:2px solid rgba(255,190,225,.7);box-shadow:0 0 28px rgba(255,150,210,.45),inset 0 0 24px rgba(220,200,255,.3)}
+.impact-fx .ifx-ring2{border-color:rgba(215,195,255,.6)}
+.impact-fx .ifx-wash{inset:0;left:0;top:0;width:auto;height:auto;margin:0;border-radius:0;background:radial-gradient(circle at var(--ix) var(--iy),rgba(255,160,205,.07),rgba(230,190,255,.04) 60%,transparent)}
+.impact-fx.pulse .ifx-glow{animation:ifx-glow 850ms ease-out}
+.impact-fx.pulse .ifx-ring1{animation:ifx-ring 850ms cubic-bezier(.2,.7,.3,1)}
+.impact-fx.boom .ifx-glow{animation:ifx-glow 1500ms ease-out;width:70vmax;height:70vmax;margin:-35vmax 0 0 -35vmax}
+.impact-fx.boom .ifx-ring1{animation:ifx-ring-big 1500ms cubic-bezier(.15,.7,.25,1)}
+.impact-fx.boom .ifx-ring2{animation:ifx-ring-big 1500ms 160ms cubic-bezier(.15,.7,.25,1) backwards}
+.impact-fx.boom .ifx-wash{animation:ifx-wash 1500ms ease-out}
+@keyframes ifx-glow{0%{opacity:0;transform:scale(.15)}20%{opacity:1}100%{opacity:0;transform:scale(1.1)}}
+@keyframes ifx-ring{0%{opacity:.9;transform:scale(.1)}100%{opacity:0;transform:scale(1)}}
+@keyframes ifx-ring-big{0%{opacity:.95;transform:scale(.08)}100%{opacity:0;transform:scale(2.4)}}
+@keyframes ifx-wash{0%{opacity:0}25%{opacity:1}100%{opacity:0}}
+body.page-pulsing>header,body.page-pulsing>main,body.page-pulsing>footer{animation:ifx-spring 850ms cubic-bezier(.3,.7,.3,1)}
+body.page-pulsing .report-panel{animation:ifx-border 850ms ease-out}
+body.page-exploding>header,body.page-exploding>main,body.page-exploding>footer{animation:ifx-shake 900ms ease-out}
+@keyframes ifx-spring{0%{transform:translateY(0) scale(1);filter:brightness(1)}25%{transform:translateY(-2px) scale(1.002);filter:brightness(1.06)}60%{transform:translateY(1px) scale(1)}100%{transform:none;filter:none}}
+@keyframes ifx-border{0%,100%{filter:none}30%{filter:brightness(1.12) drop-shadow(0 0 6px rgba(255,160,210,.5))}}
+@keyframes ifx-shake{0%{transform:none}12%{transform:translate(-3px,1px)}28%{transform:translate(3px,-2px)}46%{transform:translate(-2px,2px)}66%{transform:translate(1px,-1px)}100%{transform:none}}
+@media (prefers-reduced-motion:reduce){.impact-fx{display:none!important}body.page-pulsing *,body.page-exploding *{animation:none!important}}
+body.motion-paused .impact-fx{display:none!important}
+body.motion-paused.page-pulsing>*,body.motion-paused.page-exploding>*,body.motion-paused .report-panel{animation:none!important}

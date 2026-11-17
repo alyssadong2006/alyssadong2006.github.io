@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Alyssa Dong’s AI-assisted software engineering workflow: clear context, scoped agents, code review, evidence, and human approval through a local software factory.">
+  <meta name="theme-color" content="#100c13">
+  <title>Alyssa Dong | AI Workflow</title>
+  <link rel="icon" href="media/avatar.png">
+  <link rel="stylesheet" href="boot-screen.css">
+  <script type="module" src="boot-screen.js"></script>
+  <link rel="stylesheet" href="page-transitions.css">
+  <script type="module" src="page-transitions.js"></script>
+  <link rel="modulepreload" href="vendor/three.module.js">
+  <link rel="modulepreload" href="cat-constellation.js">
+  <link rel="modulepreload" href="constellation-background.js">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Orbitron:wght@400;500;600&family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sci-fi.css">
+  <link rel="stylesheet" href="nebula-background.css">
+  <link rel="stylesheet" href="constellation-background.css">
+  <link rel="stylesheet" href="hobbies.css">
+  <link rel="stylesheet" href="ai-workflow.css">
+  <script type="module" src="sci-fi.js"></script>
+  <script type="module" src="space-effects.js"></script>
+  <script type="module" src="nebula-background.js"></script>
+  <script type="module" src="constellation-background.js"></script>
+
+  <link rel="stylesheet" href="version-switch.css">
+</head>
+<body class="workflow-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="cosmic-fallback" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Alyssa Dong home"><span class="brand-icon" aria-hidden="true">✳</span> ALYSSA DONG<span class="brand-edition"> / PERSONAL SYSTEM</span></a>
+    <nav aria-label="Main navigation"><a href="index.html#projects">Work <span>01</span></a><a href="index.html#experience">Experience <span>02</span></a><a href="index.html#about">About <span>03</span></a><a href="index.html#hobbies">Hobbies <span>04</span></a><a href="ai-workflow.html" aria-current="page">AI workflow <span>05</span></a><a href="resume.html">Resume <span>06</span></a></nav>
+    <a class="header-contact" href="index.html#contact">Let’s connect <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="main" class="workflow-shell">
+    <div class="record-bar micro" aria-hidden="true"><span>ENGINEERING FIELD GUIDE / AL-0527</span><span>METHOD / AI-ASSISTED WORK</span></div>
+    <header class="workflow-hero">
+      <p class="eyebrow">MY WORKFLOW / SOFTWARE ENGINEERING</p>
+      <h1>How I work<br>with <span class="serif-word">AI.</span></h1>
+      <p class="workflow-lead">AI helps me investigate, plan, implement, and review. A local software factory keeps that work organised. I stay responsible for the scope, the behavior, and what gets published.</p>
+      <figure class="workflow-overview" aria-labelledby="overview-caption">
+        <figcaption id="overview-caption">The big picture</figcaption>
+        <ol>
+          <li><span class="micro">01 / ME</span><h2>Define</h2><p>I set the goal and boundaries.</p></li>
+          <li><span class="micro">02 / AI</span><h2>Plan</h2><p>Investigate the code and review the plan.</p></li>
+          <li><span class="micro">03 / AI</span><h2>Build</h2><p>Make the changes, then review them.</p></li>
+          <li><span class="micro">04 / AI + ME</span><h2>Check</h2><p>Run checks and confirm the real behavior.</p></li>
+          <li><span class="micro">05 / ME</span><h2>Approve</h2><p>I review the diff before publishing a draft.</p></li>
+        </ol>
+        <p class="overview-note">If a check finds a problem, go back and fix it. Marking the draft ready for reviewers is a separate approval.</p>
+      </figure>
+      <p class="workflow-scope">This is a walkthrough of the factory-guided approach I use, not a claim that AI can ship software unsupervised. The diagrams group the documented stages to make them easier to follow. The example task is illustrative, and no private work tickets or code are reproduced here.</p>
+    </header>
+    <div class="workflow-layout">
+      <aside class="workflow-index" aria-label="Workflow contents">
+        <p class="micro">READING INDEX</p>
+        <nav aria-label="Workflow sections"><ol>
+          <li><a href="#factory">01 / What the factory does</a></li>
+          <li><a href="#context">02 / Context before code</a></li>
+          <li><a href="#agents">03 / Agents with clear roles</a></li>
+          <li><a href="#evidence">04 / Checks and evidence</a></li>
+          <li><a href="#approvals">05 / Human approval gates</a></li>
+          <li><a href="#rework">06 / When things change</a></li>
+          <li><a href="#example">07 / A task, step by step</a></li>
+          <li><a href="#limits">08 / Limits and vocabulary</a></li>
+        </ol></nav>
+        <a class="archive-back" href="index.html#about">← Back to my profile</a>
+      </aside>
+      <article class="workflow-paper" aria-label="AI workflow field guide">
+        <section class="workflow-section" id="factory" tabindex="-1" aria-labelledby="factory-title">
+          <p class="eyebrow">01 / THE BIG PICTURE</p><h2 id="factory-title">A workflow, not a black box</h2>
+          <p>I don’t want a tool to produce a pull request and ask me to trust it. I want to understand what changed, why it fits the request, what was checked, and what still needs a decision.</p>
+          <p>The <strong>software factory</strong> is a local coordinator around AI agents and engineering tools. It keeps the task brief, plans, code changes, reports, evidence, and open questions together. It tracks the next unfinished step instead of treating every conversation as a fresh start.</p>
+          <p>A <strong>pull request (PR)</strong> is a proposed code change that teammates can review before it is merged. The factory helps prepare that proposal; it does not replace the people reviewing it.</p>
+          <p>An <strong>agent</strong> is an AI session given a particular job and a limited set of tools. The coordinator decides which job can run next. An agent’s answer is an output to inspect, not permission to publish or proof that the work is correct.</p>
+          <figure class="workflow-diagram" aria-labelledby="pipeline-caption">
+            <figcaption id="pipeline-caption">DIAGRAM 01 / A TASK MOVES THROUGH THESE GROUPS</figcaption>
+            <ol class="workflow-pipeline">
+              <li><span class="micro">01 / UNDERSTAND</span><h3>Context &amp; planning</h3><p>Read relevant code and requirements. Write a scoped plan, then challenge its assumptions.</p></li>
+              <li><span class="micro">02 / COMPARE</span><h3>Baseline</h3><p>For UI work, establish the original behavior and the evidence needed to compare it later.</p></li>
+              <li><span class="micro">03 / CHANGE</span><h3>Build &amp; review</h3><p>Implement the approved scope. A separate review examines the actual changed code.</p></li>
+              <li><span class="micro">04 / CHECK</span><h3>Validate &amp; verify</h3><p>Run scoped checks, address findings, and confirm the final behavior with appropriate evidence.</p></li>
+              <li><span class="micro">05 / DESCRIBE</span><h3>Prepare the PR</h3><p>Write the title and description from the real diff, recorded checks, and current evidence.</p></li>
+              <li><span class="micro">06 / DECIDE</span><h3>Human approvals</h3><p>Review the exact checkpoint before publishing. Marking the draft ready is a separate decision.</p></li>
+            </ol>
+            <p class="diagram-caption">Read the numbered cards in order. This is a grouped overview, not a promise of a one-way pipeline. Findings can send work back for a scoped repair. Checks-first tasks run local validation before final behavior confirmation; older tasks can use the opposite order.</p>
+          </figure>
+          <p>The point is not to approve every small engineering choice. Routine work can move forward within the authorised scope. I step in when there is a real ambiguity, a new product or design decision, a missing prerequisite, or a checkpoint that needs my approval.</p>
+        </section>
+        <section class="workflow-section" id="context" tabindex="-1" aria-labelledby="context-title">
+          <p class="eyebrow">02 / BEFORE THE FIRST EDIT</p><h2 id="context-title">Give the task a clear shape</h2>
+          <p>A useful request says more than “fix this.” I start with the intended behavior, what happens today, the relevant context, and the boundaries of the change. That gives the agent something concrete to investigate and gives me a way to judge the result.</p>
+          <dl class="workflow-contract">
+            <dt>Goal</dt><dd>What should the user be able to do when the task is finished?</dd>
+            <dt>Evidence</dt><dd>Which code, reproduction steps, design references, or documentation explain the problem?</dd>
+            <dt>Boundaries</dt><dd>What must stay unchanged? Which decisions need clarification rather than a guess?</dd>
+            <dt>Verification</dt><dd>Which behaviors and edge cases would show that the change works?</dd>
+          </dl>
+          <p>The planner reads the relevant implementation and existing conventions before suggesting a fix. It should distinguish what it actually found from what it is assuming. A linked document that cannot be accessed is missing context, not a reason to invent its contents.</p>
+          <p>A separate plan review then challenges the risky parts: does the proposal solve the right problem, respect shared contracts, account for accessibility, and avoid unnecessary changes? This is a focused review of the plan, not a second attempt to investigate the entire repository.</p>
+          <div class="workflow-note"><p><strong>A question should be specific.</strong> I want to know what was checked, what is still missing, why it matters, and what the agent recommends. “Should I continue?” is less useful than a clearly explained tradeoff.</p></div>
+          <p>For real code work, the factory uses an isolated Git <strong>worktree</strong>, which is a separate working folder attached to the same repository. That keeps task edits away from the main working folder. It is useful organisation, but it is not an operating-system security sandbox.</p>
+        </section>
+        <section class="workflow-section" id="agents" tabindex="-1" aria-labelledby="agents-title">
+          <p class="eyebrow">03 / DIVIDING THE WORK</p><h2 id="agents-title">Different jobs, different permissions</h2>
+          <p>I find it more useful to give an agent a clear responsibility than to ask one session to research, code, judge itself, and publish everything. Each role produces a deliverable for the next step.</p>
+          <div class="workflow-roles">
+            <div class="workflow-role"><h3>Planner</h3><p>Investigates the task and proposes a complete, scoped plan. Its planning job is read-only; a finished plan does not mean the implementation has happened.</p></div>
+            <div class="workflow-role"><h3>Plan reviewer</h3><p>Challenges the plan and checks risk-critical assumptions. It identifies genuine blockers without reopening questions that have already been answered.</p></div>
+            <div class="workflow-role"><h3>Implementer</h3><p>Makes the code changes within the task’s scope and existing conventions. It can also address concrete, authorised findings from review or checks.</p></div>
+            <div class="workflow-role"><h3>Code reviewer</h3><p>Reads the real changed code and looks for defects, regressions, and missing coverage. A separate session adds another perspective, but AI review is still fallible.</p></div>
+            <div class="workflow-role"><h3>Scenario author</h3><p>For automated mobile evidence, prepares a bounded capture scenario from the task and testing conventions. Web automation instead requires an explicitly authorised observational scenario.</p></div>
+            <div class="workflow-role"><h3>PR writer</h3><p>Turns the verified changes and recorded results into a title and description. It should report failures, skipped checks, and limitations honestly, not turn them into a success story.</p></div>
+          </div>
+          <p>These roles are not all simultaneous writers. The coordinator limits active work per task and keeps shared preview and capture resources coordinated. A reviewer finding something does not give every agent permission to edit the same branch.</p>
+          <p>Tool access matters as much as instructions. Asking a model not to push is weaker than withholding push tools from it. Publication is a guarded coordinator operation, not something the implementer or automated task chat can authorise.</p>
+        </section>
+        <section class="workflow-section" id="evidence" tabindex="-1" aria-labelledby="evidence-title">
+          <p class="eyebrow">04 / WHAT COUNTS AS EVIDENCE</p><h2 id="evidence-title">Check the code and the behavior</h2>
+          <p><strong>Code review, local checks, and behavior verification answer different questions.</strong> A reviewer may spot a logic problem. Tests can check expected behavior, type checks can catch mismatched data types, and lint can flag code-quality problems. Trying the actual interface can reveal something neither of them covered.</p>
+          <p>The factory runs scoped local validation through the repository’s configured targets. “Scoped” is important: checking the projects that own the changed files does not prove that every dependent project or every user journey is covered. I still need to think about the risk and choose additional checks when appropriate.</p>
+          <p>For UI changes, before-and-after evidence connects the code to something observable. The baseline must come from the original comparison revision, not from the already-edited folder. After evidence must correspond to the current changes. Screenshots help with appearance; a recording or explicit behavior check is more useful for focus, navigation, or motion.</p>
+          <ul>
+            <li><strong>Mobile:</strong> the workflow supports iOS and Android capture, subject to the required devices, environment, and scenario being available.</li>
+            <li><strong>Web:</strong> manual evidence or skipped capture is the default. Automatic browser evidence needs a separately authorised, bounded observational scenario. It is not permission to submit transactions or perform arbitrary writes.</li>
+            <li><strong>No UI:</strong> a task can skip screenshots and rely on appropriate checks and diff review. A decorative screenshot would add little evidence.</li>
+          </ul>
+          <p>Manual captures remain manual. Importing an image and attesting to its revision does not independently prove where it came from, and it should never be described as an automated test. Simulated evidence from a dry run is also labelled as simulated.</p>
+          <div class="workflow-note"><p><strong>A passing check has a scope.</strong> It shows that a particular check passed for particular inputs. It does not prove the whole feature is correct, and a capture by itself is not a behavioral assertion.</p></div>
+          <p>I review whether the final behavior matches the request before approving verification. That approval is local behavior confirmation. It is not a GitHub review approval and does not grant permission to publish.</p>
+        </section>
+        <section class="workflow-section" id="approvals" tabindex="-1" aria-labelledby="approvals-title">
+          <p class="eyebrow">05 / KEEPING THE DECISIONS SEPARATE</p><h2 id="approvals-title">Verified does not mean published</h2>
+          <p>Once the required review, checks, and behavior confirmation settle, the factory prepares the pull-request metadata and a publication checkpoint. I can inspect the branch, full diff, plans, reports, evidence, checks, and exact title and description together.</p>
+          <figure class="workflow-diagram" aria-labelledby="gates-caption">
+            <figcaption id="gates-caption">DIAGRAM 02 / THREE DISTINCT DECISIONS</figcaption>
+            <ol class="workflow-gates">
+              <li><span class="micro">BEHAVIOR CONFIRMATION</span><h3>“This behaves as intended.”</h3><p>Confirm the local result using the current evidence. This does not commit or push code.</p></li>
+              <li><span class="micro">EXACT-DIFF PUBLICATION</span><h3>“Publish this reviewed checkpoint.”</h3><p>Explicitly approve the commit, normal push, and draft PR publication. The approval belongs to this source and metadata, not to future edits.</p></li>
+              <li><span class="micro">READY FOR REVIEW</span><h3>“This draft can go to reviewers.”</h3><p>A separate confirmation marks the draft ready. It does not approve the author’s own PR, merge it, or deploy it.</p></li>
+            </ol>
+            <p class="diagram-caption">Teammate review, merge, and deployment follow the repository’s normal process. The factory does not turn a local verification click into those permissions.</p>
+          </figure>
+          <p>The checkpoint can be reviewed through the dashboard or the confirmed interactive terminal path. Automated task chat cannot grant publication or mark-ready approval. If the source or reviewed metadata changes before approval completes, the old checkpoint is no longer sufficient.</p>
+          <p>The same distinction applies to communication. Preparing a reply or a message is not sending it. A draft should only claim a fix or passing checks when the published changes and recorded results support that statement.</p>
+          <p>A manual override is a deliberate exception, not another route to a green badge. Skipped or failed stages must remain disclosed, and publishing still needs a fresh review and explicit confirmation. An override is not permission for a force push, merge, or deployment.</p>
+        </section>
+        <section class="workflow-section" id="rework" tabindex="-1" aria-labelledby="rework-title">
+          <p class="eyebrow">06 / THE PART THAT ISN’T A STRAIGHT LINE</p><h2 id="rework-title">Repair the problem, then check again</h2>
+          <p>A review finding can be a concrete defect inside the original scope, a new product or design decision, or a request for clarification. Those should not all trigger the same response. An authorised defect can return to implementation; a new decision needs a focused human question.</p>
+          <figure class="workflow-diagram" aria-labelledby="loop-caption">
+            <figcaption id="loop-caption">DIAGRAM 03 / A REPAIR RETURNS TO FRESH EVIDENCE</figcaption>
+            <ol class="workflow-loop">
+              <li><strong>01 / Finding or requested change</strong>Identify what is wrong and whether the repair is within the authorised scope.</li>
+              <li><strong>02 / Scoped implementation</strong>Change the affected code. Earlier authorisation is not carried forward as approval of the new diff.</li>
+              <li><strong>03 / Fresh review and checks</strong>Review the actual edits. Rerun invalidated checks or prove that an earlier passing result is still reusable.</li>
+              <li><strong>04 / Current verification</strong>Confirm affected behavior and evidence, then return to a new publication checkpoint.</li>
+            </ol>
+            <p class="diagram-caption">If another defect is found, the loop can repeat within its limits. New scope and repeated unchanged failures stop for a decision rather than producing an endless chain of agents.</p>
+          </figure>
+          <p>Not every repair needs to rerun every command. The factory can reuse certain passing project-and-target results only after validating their declared inputs, dependency information, configuration, tools, and comparison base. A reused result is labelled <strong>not re-run</strong>. It is not a new test execution, and unprovable reuse falls back to ordinary checks.</p>
+          <p>Visual evidence has its own rules. Prior captures are not silently relabelled as new. When eligible, re-attesting them is a separate human decision about whether they still represent the current work. Otherwise the affected behavior needs fresh captures.</p>
+          <p>Failures also need honest treatment. An unrelated failure does not automatically become a pass, and deciding to continue despite it is different from fixing it. Agent attempts and repair loops have limits so that stalled work does not keep consuming time or editing indefinitely.</p>
+          <p>Pausing stops further dispatch; it does not undo partial edits or an external operation that already started. If publication times out, I inspect the branch and PR before retrying because the operation may already have taken effect. An unknown outcome is not proof of failure.</p>
+          <p>After teammate feedback, follow-up changes use the existing task and open PR when its identity still matches. The new code goes through review, verification, and checks again before an explicitly approved update. Old comments stay tied to the revision they reviewed.</p>
+        </section>
+        <section class="workflow-section" id="example" tabindex="-1" aria-labelledby="example-title">
+          <p class="eyebrow">07 / MAKING THE PROCESS CONCRETE</p><h2 id="example-title">An example: verifying a UI change</h2>
+          <p>Suppose I’m updating the project cards on this portfolio to make their titles, descriptions, and links easier to read on a phone. The cards might look better in a screenshot, but I also need to know that the content still fits and the interactions still work.</p>
+          <p>This is an illustrative walkthrough of how I would structure that task, not a record of a completed factory run.</p>
+          <div class="workflow-example">
+            <h3>From a layout change to a verified result</h3>
+            <ol>
+              <li><strong>Define what should change.</strong> Improve spacing and text hierarchy on small screens. Keep every project’s wording, technology tags, and destination links unchanged. Mission details should still expand, filters should still work, and the page should not scroll sideways.</li>
+              <li><strong>Investigate and plan.</strong> Read the card markup, shared styles, responsive rules, and interaction code. Propose a focused layout change, then have the plan reviewed for unintended effects on desktop and other cards.</li>
+              <li><strong>Capture the original UI.</strong> Use the original comparison revision, not the folder after it has been edited. Capture the same project cards on a narrow phone-sized viewport and a desktop viewport, including a card with its mission details open. For a web task, use manual captures or an explicitly authorised observational browser scenario.</li>
+              <li><strong>Implement and review the diff.</strong> Make the scoped changes. Check that the diff adjusts the intended layout without removing content, changing URLs, or rewriting unrelated interaction logic. Run the appropriate local checks.</li>
+              <li><strong>Compare like for like.</strong> Capture the updated UI with the same viewport sizes, project content, selected filter, and expanded state. Check title wrapping, paragraph readability, tag placement, link visibility, and clipped content. The after captures must correspond to the current changes.</li>
+              <li><strong>Try the interactions.</strong> Open and close mission details, switch filters, and check that each project link still has the correct destination. Use the keyboard to reach the controls and confirm that focus is visible. Check touch scrolling and browser zoom as well as the static layout.</li>
+              <li><strong>Review the evidence myself.</strong> Decide whether the layout actually makes the cards easier to read and whether the behavior matches the request. If a long title or expanded card still breaks the layout, return for a scoped fix and fresh checks of the affected behavior. A good-looking screenshot is not enough to approve the result.</li>
+              <li><strong>Prepare the PR and approve separately.</strong> Include representative before/after evidence and state which checks and interactions were actually tested. Disclose anything that was skipped or unavailable. Only then review the exact publication checkpoint, approve publishing the draft, and separately decide when it is ready for reviewers.</li>
+            </ol>
+          </div>
+          <div class="workflow-note"><p><strong>What would convince me?</strong> The same cards are easier to read at both sizes, their content is intact, and the filters, links, and expandable details still behave as expected. The screenshots show the layout; the interaction checks support the behavior.</p></div>
+          <p>The agent helps make and inspect the change. My job is to judge whether it improves the UI without breaking something else, and to make sure the evidence supports what we say in the PR.</p>
+        </section>
+        <section class="workflow-section" id="limits" tabindex="-1" aria-labelledby="limits-title">
+          <p class="eyebrow">08 / WHAT I STILL NEED TO THINK ABOUT</p><h2 id="limits-title">Useful assistance, not certainty</h2>
+          <p>AI can miss a caller, misunderstand a requirement, write a plausible but incorrect test, or share the same blind spot as another agent. A second model’s confidence is not independent proof. I still need to read the diff and understand the behavior well enough to explain it.</p>
+          <p>Permissions and provenance reduce some risks; they do not remove them all. Worktrees do not sandbox repository code, screenshots can contain sensitive information, and connected tools are only useful when access and context are actually available. I keep secrets and private data out of prompts and inspect evidence before sharing it.</p>
+          <p>The factory also has boundaries. Local adapters, device availability, authentication, and browser support can block a task. A dry-run walkthrough is useful for learning the process, but simulated results do not demonstrate that a live integration worked. Proposed remote handoffs or team integrations should not be described as already available.</p>
+          <p>For me, the value is having a process I can follow and inspect: smaller responsibilities, explicit outputs, and clear decisions. AI helps with the work. It does not take responsibility for the software away from me.</p>
+          <h3>A few terms, in plain language</h3>
+          <dl class="workflow-glossary">
+            <div><dt>Diff</dt><dd>The actual additions, deletions, and changes compared with a chosen starting revision.</dd></div>
+            <div><dt>Baseline</dt><dd>The original revision and behavior used as a reference for the proposed change.</dd></div>
+            <div><dt>Dry run</dt><dd>A simulated walkthrough of the workflow, without real model calls, product edits, device operations, or publication.</dd></div>
+            <div><dt>Worktree</dt><dd>A separate working folder for a branch in the same Git repository. It separates edits, not OS privileges.</dd></div>
+            <div><dt>Artifact</dt><dd>A saved output such as a plan, check report, screenshot, or recording that can be inspected later.</dd></div>
+            <div><dt>Approval gate</dt><dd>A checkpoint where a specific human decision is required before the next guarded action.</dd></div>
+            <div><dt>Source fingerprint</dt><dd>An identifier derived from the relevant source snapshot, used to detect changes. It says which code was checked, not whether that code is correct.</dd></div>
+            <div><dt>Provenance</dt><dd>The record of where an output came from, which revision it belongs to, and whether it was automated, manual, simulated, rerun, or reused.</dd></div>
+          </dl>
+          <a class="workflow-return" href="index.html#about">← Back to my profile</a>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="shell"><a class="brand" href="index.html">✳ AD</a><p class="micro">© <span id="current-year">2026</span> ALYSSA DONG</p><span class="micro">END OF FIELD GUIDE / KEEP ASKING GOOD QUESTIONS.</span><button id="motion-toggle" type="button" aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span></button></footer>
+
+  <nav class="site-version-switch" data-version="v3" aria-label="Website version" onclick="event.stopPropagation()"><span>Version</span><a href="versions/v1/index.html" aria-label="v1: original site">v1</a><a href="versions/v2/index.html" aria-label="v2: beach, pixel and 3D">v2</a><a href="index.html" aria-label="v3: current planet site" aria-current="page">v3</a></nav>
+</body>
+</html>

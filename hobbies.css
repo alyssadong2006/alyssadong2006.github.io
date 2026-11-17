@@ -1,0 +1,37 @@
+/* Off-duty observations: real stories and a personal Moon photograph. */
+#hobbies.report-panel { --rp-a: 220,185,220; --rp-b: 239,184,204; --rp-c: 180,207,245; }
+.hobbies-intro { max-width: 340px; color: var(--muted); font-size: 16px; line-height: 1.8; }
+.hobbies-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; }
+.hobby-card { min-width: 0; padding: 26px; border: 1px solid var(--line); border-radius: 5px; background: linear-gradient(145deg,#291b2b99,#100c1399); }
+.hobby-card .eyebrow { font-size: 10px; margin-bottom: 14px; }
+.hobby-card h3 { font: 600 30px/1.15 var(--report); letter-spacing: -.015em; margin-bottom: 18px; color: var(--text); }
+.hobby-card p:not(.eyebrow) { font-size: 17px; line-height: 1.85; color: #d0c3cf; max-width: 64ch; }
+.hobby-card p + p { margin-top: 16px; }
+.hobby-stargazing { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); align-items: center; gap: 36px; }
+.moon-observation { margin: 0; min-width: 0; padding: 12px; border: 1px solid #d8b5d040; border-radius: 4px; background: #0e0c13; position: relative; }
+.moon-observation::before { content: ''; position: absolute; inset: 6px; border: 1px solid #d8b5d01c; pointer-events: none; }
+.moon-observation img { display: block; width: 100%; height: auto; max-height: 410px; object-fit: contain; }
+.moon-observation figcaption { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); font: 10px/1.5 var(--mono); letter-spacing: .05em; color: var(--muted); }
+.moon-observation figcaption span:first-child { color: var(--pink); }
+@media(max-width:800px) {
+  .hobby-stargazing { gap: 24px; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); }
+  .hobby-card { padding: 22px; }
+  .hobby-card p:not(.eyebrow) { font-size: 16px; }
+}
+@media(max-width:640px) {
+  .hobbies-grid,.hobby-stargazing { grid-template-columns: minmax(0,1fr); }
+  .hobby-card { padding: 20px 16px; }
+  .hobby-stargazing { grid-column: auto; }
+  .hobby-card h3 { font-size: 28px; }
+  .moon-observation img { max-height: 360px; }
+}
+/* Six navigation entries stay readable rather than squeezing into one tablet row. */
+@media(max-width:1050px) {
+  .site-header { flex-wrap: wrap; height: auto; min-height: 110px; padding-block: 16px; gap: 8px; }
+  .site-header nav { width: 100%; justify-content: space-between; gap: 8px; }
+  .header-contact { display: none; }
+}
+@media(max-width:520px) {
+  .site-header nav { flex-wrap: wrap; justify-content: flex-start; gap: 4px 16px; }
+  .site-header nav a { display: flex; align-items: center; min-height: 32px; font-size: 13px; }
+}

@@ -3,266 +3,165 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Alyssa Dong is a software engineering intern and University of Waterloo student building thoughtful, useful software.">
-  <meta name="theme-color" content="#d8eff6">
-  <title>Alyssa Dong | Software Engineer</title>
+  <meta name="description" content="Alyssa Dong — software engineer, University of Waterloo. Explore work in product engineering, machine learning, and creative software.">
+  <meta name="theme-color" content="#100c13">
+  <link rel="stylesheet" href="boot-screen.css">
+  <script type="module" src="boot-screen.js"></script>
+  <link rel="stylesheet" href="page-transitions.css">
+  <script type="module" src="page-transitions.js"></script>
+  <title>Alyssa Dong — Welcome to my orbit</title>
   <link rel="icon" href="media/avatar.png">
-  <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="beach-3d.css">
-  <link rel="stylesheet" href="daylight-theme.css">
-  <link rel="stylesheet" href="cute-daylight.css">
-  <link rel="stylesheet" href="company-logos.css">
-  <link rel="stylesheet" href="floral-frame.css">
-  <script type="module" src="theme-switch.js"></script>
-  <script type="module" src="sunflower-trail.js"></script>
-  <script type="module" src="ocean-world.js"></script>
-  <script src="main.js" defer></script>
-  <script type="module" src="beach-3d.js"></script>
+  <link rel="modulepreload" href="vendor/three.module.js">
+  <link rel="modulepreload" href="sci-fi-scene.js">
+  <link rel="modulepreload" href="cat-constellation.js">
+  <link rel="modulepreload" href="core-explosion.js">
+  <link rel="modulepreload" href="constellation-background.js">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Orbitron:wght@400;500;600&family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sci-fi.css">
+  <link rel="stylesheet" href="nebula-background.css">
+  <link rel="stylesheet" href="constellation-background.css">
+  <link rel="stylesheet" href="report-effects.css">
+  <link rel="stylesheet" href="hobbies.css">
+  <link rel="stylesheet" href="impact-effects.css">
+  <script type="module" src="sci-fi.js"></script>
+  <script type="module" src="sci-fi-scene.js"></script>
+  <script type="module" src="space-effects.js"></script>
+  <script type="module" src="planet-report.js"></script>
+  <script type="module" src="report-effects.js"></script>
+  <script type="module" src="impact-effects.js"></script>
+  <script type="module" src="nebula-background.js"></script>
+  <script type="module" src="constellation-background.js"></script>
+
+  <link rel="stylesheet" href="version-switch.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="cosmic-fallback" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
   <header class="site-header">
-    <nav class="site-nav shell" aria-label="Main navigation">
-      <a class="brand" href="index.html" aria-label="Alyssa Dong, home">AD<span>.</span></a>
-      <div class="nav-links">
-        <a href="#experience">Experience</a>
-        <a href="projects.html">Projects</a>
-        <a href="#about">About</a>
-        <a class="nav-contact" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
-      </div>
-    </nav>
+    <a class="brand" href="#" aria-label="Alyssa Dong home"><span class="brand-icon" aria-hidden="true">✳</span> ALYSSA DONG<span class="brand-edition"> / PERSONAL SYSTEM</span></a>
+    <nav aria-label="Main navigation"><a href="#projects">Work <span>01</span></a><a href="#experience">Experience <span>02</span></a><a href="#about">About <span>03</span></a><a href="#hobbies">Hobbies <span>04</span></a><a href="ai-workflow.html">AI workflow <span>05</span></a><a href="resume.html">Resume <span>06</span></a></nav>
+    <a class="header-contact" href="#contact">Let’s connect <span aria-hidden="true">↗</span></a>
   </header>
-
-  <div class="beach-scene" aria-hidden="true">
-    <i class="pixel-sun"></i>
-    <i class="pixel-cloud cloud-one"></i>
-    <i class="pixel-cloud cloud-two"></i>
-    <i class="pixel-cloud cloud-three"></i>
-    <i class="pixel-bird bird-one"></i>
-    <i class="pixel-bird bird-two"></i>
-    <div class="beach-water water-base"></div>
-    <div class="beach-wave wave-far"></div>
-    <div class="beach-wave wave-middle"></div>
-    <div class="beach-wave wave-near"></div>
-    <div class="beach-foam foam-far"></div>
-    <div class="beach-foam foam-near"></div>
-    <div class="beach-sand"></div>
-    <div class="beach-sand-specks"></div>
-    <i class="pixel-shell shell-left"></i>
-    <i class="pixel-shell shell-right"></i>
-    <i class="pixel-seaglass"></i>
-    <i class="pixel-starfish"></i>
-    <i class="pixel-footsteps"></i>
-    <i class="pixel-seaweed"></i>
-  </div>
-
-  <main id="main" class="game-world">
-    <audio id="bgmusic" src="media/waves.mp3" loop preload="none"></audio>
+  <main id="main">
     <section class="hero shell" aria-labelledby="hero-title">
+      <div class="observation-header"><span class="micro">PERSONAL SYSTEM / OBSERVATION DECK</span><span class="micro"><span class="status-dot" aria-hidden="true"></span> LIVE SIMULATION · AL-0527</span></div>
+      <div class="hero-main">
+      <div class="hero-intro">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Player 1 · Software engineer · Waterloo, Ontario</p>
-        <h1 id="hero-title">I build software that makes complex things <span>feel simple.</span></h1>
-        <p class="hero-summary">I’m Alyssa, a University of Waterloo student who enjoys turning tricky problems into thoughtful, reliable products—from financial workflows to cross-platform apps and applied machine learning.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="projects.html">Start exploring <span aria-hidden="true">↗</span></a>
-          <a class="button button-quiet" href="mailto:alydong2006@gmail.com">Get in touch</a>
-          <button class="button button-quiet sound-toggle" id="sound-toggle" type="button" aria-pressed="false">Play ocean sounds <span aria-hidden="true">♫</span></button>
-        </div>
-        <p class="sound-status" id="sound-status" aria-live="polite"></p>
-        <div class="hero-links" aria-label="Professional profiles">
-          <a href="https://github.com/alyssadong2006" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-          <a href="https://www.linkedin.com/in/alyssa-dong-00a2b2275/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-          <a href="mailto:alydong2006@gmail.com">Email <span aria-hidden="true">↗</span></a>
-        </div>
+        <p class="eyebrow entrance"><span class="status-dot"></span> TRANSMISSION FROM WATERLOO, ON / EARTH</p>
+        <h1 id="hero-title" class="entrance">Hi, I’m Alyssa.<br>This is my <span class="serif-word">orbit.</span></h1>
+        <p class="hero-summary entrance">I study math at Waterloo and build software.<br>Sometimes it’s a trading app. Sometimes it’s a desktop goose.</p>
+        <div class="hero-actions entrance"><a class="button button-primary" href="#projects">See what I’ve built <span aria-hidden="true">↗</span></a><a class="quiet-link" href="https://github.com/alyssadong2006" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
       </div>
-      <div class="hero-art beach-diorama">
-        <div class="frame-botanicals" aria-hidden="true">
-          <span class="frame-garland"></span>
-          <span class="frame-flora frame-flora-left"></span>
-          <span class="frame-flora frame-flora-left-bud"></span>
-          <span class="frame-flora frame-flora-right"></span>
-          <span class="frame-flora frame-flora-right-bud"></span>
-          <span class="frame-flora frame-flora-bottom-left"></span>
-          <span class="frame-flora frame-flora-bottom-right"></span>
-        </div>
-        <button class="diorama-switch" id="diorama-switch" type="button" aria-label="Switch to the 3D beach theme" aria-pressed="false"><span class="visually-hidden">Change the scenery</span></button>
-        <div class="diorama-heading"><span aria-hidden="true">✳</span> A little place to slow down <span class="diorama-coordinate">ISLAND 01</span></div>
-        <div id="beach-viewport" class="beach-viewport" role="img" aria-label="A beach diorama with palm trees, a striped umbrella, diving equipment, seashells, circling seabirds, and turquoise waves.">
-          <div class="beach-fallback" aria-hidden="true"><span>🌴</span><span>🏖️</span><span>🐚</span></div>
-        </div>
-        <div class="diorama-footer">
-          <img src="media/avatar.png" alt="Portrait of Alyssa Dong" width="40" height="40">
-          <p>Nothing beats a beach day<br><strong>after a good dive.</strong></p>
-          <span class="diorama-hint" id="diorama-hint">↖ Click to switch to 3D</span>
-        </div>
+      <aside class="identity-card entrance" aria-label="Alyssa's profile"><img src="media/avatar.png" alt="Alyssa Dong" width="76" height="76"><div><span class="micro">MISSION CONTROL</span><strong>Alyssa Dong</strong><p>Math student. Software engineer.</p></div><span class="identity-symbol" aria-hidden="true">↗</span></aside>
       </div>
-    </section>
-
-    <p class="game-hint shell"><span aria-hidden="true">✦</span> Click an empty spot to spawn a tiny 404 glitch!</p>
-    <p class="visually-hidden" id="game-status" aria-live="polite"></p>
-
-    <section class="intro-strip" aria-label="Career highlights">
-      <div class="shell intro-strip-inner">
-        <p>Currently building at <strong>Wealthsimple</strong></p>
-        <span aria-hidden="true">✳</span>
-        <p>Previously at <strong>Shopify</strong> &amp; <strong>Promach</strong></p>
-        <span aria-hidden="true">✳</span>
-        <p><strong>Applied Math + Scientific Computing + Machine Learning @ UWaterloo</strong></p>
-      </div>
-    </section>
-
-    <section class="section shell" id="experience" aria-labelledby="experience-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Where I’ve made an impact</p>
-          <h2 id="experience-title">Experience</h2>
-        </div>
-        <p class="section-lede">A mix of product engineering, platform work, and automation—built with teams that care about the details.</p>
-      </div>
-      <div class="experience-list">
-        <article class="experience-card">
-          <div class="experience-meta">
-            <p class="experience-date">Sep 2026 — Present</p>
-            <span class="experience-mark company-logo" aria-hidden="true"><img src="media/wealthsimple-logo.svg" alt="" width="112" height="20" loading="lazy"></span>
+      <div class="planet-console">
+        <div class="scene-toolbar"><span class="micro">OBSERVATORY / AL-0527</span><div role="group" aria-label="Visualization mode"><button type="button" data-scene-mode="planet" aria-pressed="true" class="is-active">Planet</button><button type="button" data-scene-mode="constellation" aria-pressed="false" aria-label="Show cat-shaped star map">Star map</button><button type="button" class="reset-view" title="Reset model rotation and zoom">Reset view</button></div></div>
+        <div class="planet-model-stage" tabindex="0" role="group" aria-label="Interactive observatory. Drag with your mouse to rotate, or use arrow keys. Plus and minus zoom. Home resets rotation and zoom. In star map mode, a highlighted guiding light labelled AL-0527 marks one star at the cat’s shoulder."><div id="cosmos" aria-hidden="true"></div><div class="fallback-orb" aria-hidden="true"></div><div class="model-corners" aria-hidden="true"></div><div class="zoom-controls" role="group" aria-label="Zoom"><button type="button" class="zoom-in" data-zoom="in" disabled aria-label="Zoom in" title="Zoom in (+)">+</button><button type="button" class="zoom-out" data-zoom="out" disabled aria-label="Zoom out" title="Zoom out (−)">−</button></div><p class="micro model-readout"><span id="model-caption">POLARIZZZZ / LIVE ORBIT</span><span>DRAG · +/− ZOOM</span></p></div>
+        <div class="orbit-controls"><button class="pulse-control" id="pulse-control" type="button" aria-label="Send a pulse through Polarizzzz’s core"><span aria-hidden="true">✳</span> Pulse the core</button><button class="shower-control" id="shower-control" type="button">Meteor shower <span aria-hidden="true">↘</span></button><button class="motion-shortcut" type="button" aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span></button><p class="micro effects-status" id="effects-status" aria-live="polite"></p></div>
+      <aside class="planet-dossier entrance" aria-labelledby="planet-name">
+        <div class="dossier-heading micro"><span>AL-0527 / PLANETARY REPORT</span><span class="report-marker" aria-hidden="true">+</span></div>
+        <div class="planet-title"><h2 id="planet-name">Polarizzzz</h2><span class="micro planet-badge">PERSONAL PLANET</span></div>
+        <p class="planet-tagline">A guiding light</p>
+        <dl class="planet-meta"><div><dt>Classification</dt><dd>Rest-powered beacon</dd></div><div><dt>Orbiters</dt><dd>05 / active</dd></div></dl>
+        <details class="planet-analysis">
+          <summary aria-controls="composition-report"><span class="scan-glyph" aria-hidden="true"></span><span class="scan-action-label">Scan composition</span><span class="scan-toggle-icon" aria-hidden="true">+</span></summary>
+          <div class="composition" id="composition-report" data-scan-state="ready">
+            <p class="scan-status" role="status" aria-live="polite">Composition report · 3 signatures</p>
+            <div class="scan-display" aria-hidden="true"><div class="scan-target"><i></i><i></i><i></i><span></span></div><div class="scan-waveform"></div><div class="scan-progress"><span></span></div></div>
+            <div class="scan-results"><dl><div><dt>Curiosity</dt><dd>Abundant</dd></div><div><dt>Applied Math</dt><dd>Core material</dd></div><div><dt>Power naps</dt><dd>Recovery system</dd></div></dl><p class="planet-note">Not actual chemistry. The naps, though, are very real.</p><button class="rescan-control" type="button" hidden>Run another scan <span aria-hidden="true">↻</span></button></div>
           </div>
-          <div class="experience-body">
-            <h3>Software Engineering Intern <span>· Wealthsimple</span></h3>
-            <p class="experience-location">Canada</p>
-            <ul>
+        </details>
+        <div class="scan-placeholder"><div class="spectrum" aria-hidden="true"></div><p>What’s Polarizzzz made of?</p><span>Run a composition scan to read the report.</span></div>
+      </aside>
+      </div>
+      </div>
+      <div class="hero-bottom"><a href="#projects" class="scroll-cue"><span class="scroll-line" aria-hidden="true"></span> CONTINUE INTO THE SYSTEM</a><span class="micro hero-coordinates">43°28′ N / 80°32′ W <span>EARTH, FOR NOW.</span></span></div>
+    </section>
+    <div class="signal-strip"><div class="shell"><span class="micro">RECENT STATIONS</span><span>Wealthsimple</span><span class="strip-star" aria-hidden="true">✳</span><span>Shopify</span><span class="strip-star" aria-hidden="true">✳</span><span>Promach</span><span class="strip-end micro">ENGINEERING LOG / 2025–2026</span></div></div>
+    <section class="section shell report-panel" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading reveal"><div><p class="eyebrow">01 / EXPERIMENTAL SYSTEMS</p><h2 id="projects-title">Research <span class="serif-word">archive.</span></h2></div><p class="report-abstract"><span class="micro">ABSTRACT</span>Some solve a problem. Some started with “what if?” Simulations, security tools, and the occasional desktop goose.</p></div>
+      <div class="project-toolbar"><div class="project-filters" role="group" aria-label="Filter projects"><button class="is-active" type="button" data-filter="all" aria-pressed="true">All work <span>07</span></button><button type="button" data-filter="ai" aria-pressed="false">AI &amp; ML</button><button type="button" data-filter="tools" aria-pressed="false">Developer tools</button><button type="button" data-filter="apps" aria-pressed="false">Apps &amp; community</button></div><p id="project-count" class="micro" aria-live="polite">7 PROJECTS</p></div>
+      <div class="project-grid"><article class="project-card reveal" data-category="ai apps">
+      <div class="project-file"><span class="micro">PROJECT / 01</span><span class="micro">NEUROEVOLUTION</span></div>
+      <div class="project-body"><p class="micro project-type">Neuroevolution · Interactive simulation</p><h3><a href="https://github.com/alyssadong2006/Platformer-Evolution-Lab" target="_blank" rel="noopener noreferrer">Platformer Evolution Lab <span aria-hidden="true">↗</span></a></h3><p class="project-description">Build a level, then watch little neural-network agents learn to beat it. Each generation gets a new shot at figuring out when to run, turn, and jump.</p><div class="tag-list"><span>TypeScript</span><span>React</span><span>Vite</span><span>Neural networks</span><span>Genetic algorithms</span></div><details><summary>Mission details <span aria-hidden="true">+</span></summary><ul>
+            <li>Connected 13 sensor inputs to a 16-node hidden layer and three action outputs for left, right, and jump.</li>
+            <li>Preserved elite agents and generated new brains through crossover and mutation, using progress and goal completion to score attempts.</li>
+            <li>Simulated populations of 20–30 agents with fixed-step physics and generation-based training.</li>
+          </ul><div class="technical-notes"><p><strong>Neural Network Controller:</strong> Implemented a fixed-topology 13–16–3 multilayer perceptron with 275 weights and biases, using flattened genomes to compute dense affine layers with tanh activations for mapping observations to left, right, and jump scores.</p><p><strong>Fitness-Based Neuroevolution:</strong> Evolved controller parameters across generations using 20% elitism, per-parameter uniform crossover, and Box–Muller Gaussian mutation (13% mutation probability; weights clamped to [−5, 5]); fitness rewards goal-distance progress, penalizes elapsed time, and adds a completion bonus.</p><p><strong>Closed-Loop Agent Control:</strong> Built a real-time perception-to-action loop using 13 state features (eight directional distance sensors, goal offset, velocity, and grounded state); mapped network outputs to incremental horizontal steering and a grounded, threshold-triggered jump in a Matter.js physics simulation, without backpropagation.</p></div></details><a class="project-link" href="https://github.com/alyssadong2006/Platformer-Evolution-Lab" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a></div></article>
+<article class="project-card reveal" data-category="ai tools">
+      <div class="project-file"><span class="micro">PROJECT / 02</span><span class="micro">WEB SECURITY</span></div>
+      <div class="project-body"><p class="micro project-type">AI · Security · Developer tool</p><h3><a href="https://github.com/alyssadong2006/SafeParse-v2" target="_blank" rel="noopener noreferrer">SafeParse <span aria-hidden="true">↗</span></a></h3><p class="project-description">A security gateway that checks web content before it reaches an AI system. It combines browser isolation, rule-based checks, and a trained classifier, then shows where it found a threat.</p><div class="tag-list"><span>Python</span><span>FastAPI</span><span>Playwright</span><span>PyTorch</span><span>Hugging Face</span><span>Docker</span></div><details><summary>Mission details <span aria-hidden="true">+</span></summary><ul>
+            <li>Curated 9,280 examples and trained a DistilBERT classifier: 98.17% F1, 98.05% attack recall, and 2.01% false-positive rate on 1,517 test examples.</li>
+            <li>Added a validated batch API and JavaScript dashboard, with ordered results and isolated per-page errors.</li>
+            <li>Packaged offline CPU inference and validated 72 tests, including browser dashboard coverage.</li>
+          </ul><div class="technical-notes"><p><strong>Secure Web Ingestion:</strong> Built an asynchronous FastAPI/Playwright gateway with a shared Chromium process and isolated per-request contexts; inspected computed CSS visibility, applied NFKC normalization and zero-width character cleanup, and added a size-limited HTTPX fallback for HTTP/2 failures.</p><p><strong>Dataset Curation:</strong> Curated 9,280 examples from four Hugging Face training datasets plus a separate source-held-out benchmark; pinned revisions and SHA-256 checksums, and built group-aware splits using document/pair/payload keys and minhash/Jaccard near-duplicate filtering to reduce leakage.</p><p><strong>Custom Injection Classifier:</strong> Fine-tuned DistilBERT in PyTorch with document-level max-window binary cross-entropy over 512-token windows with 64-token overlap; used AdamW, gradient accumulation, and activation checkpointing, achieving 98.17% F1, 98.05% attack recall, and a 2.01% false-positive rate on 1,517 curated test examples.</p><p><strong>Network Security:</strong> Hardened ingestion against SSRF by rejecting non-HTTP and credential-bearing URLs, checking DNS-resolved IP addresses against private, loopback, link-local, and reserved ranges, and revalidating redirects and every browser subresource request.</p><p><strong>Batch API &amp; Dashboard:</strong> Added a validated batch endpoint for up to 10 URLs with ordered results and per-page error isolation; extended the JavaScript dashboard with batch input, individual security reports, and JSON export while processing pages sequentially to bound browser resource use.</p><p><strong>Defense-in-Depth &amp; Delivery:</strong> Aggregated structural, regex, Unicode, and ML signals into a hybrid threat score; returned Pydantic audits with evidence offsets and randomized nonce enclosures, shipped offline CPU inference through safetensors and a checksum-verifiable release, and validated 72 tests, including batch API and Chromium dashboard coverage, with Docker and GitHub Actions support.</p></div></details><a class="project-link" href="https://github.com/alyssadong2006/SafeParse-v2" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a></div></article>
+<article class="project-card reveal" data-category="tools apps">
+      <div class="project-file"><span class="micro">PROJECT / 03</span><span class="micro">MACOS + WINDOWS</span></div>
+      <div class="project-body"><p class="micro project-type">Desktop · Native apps</p><h3><a href="https://github.com/alyssadong2006/Waterloo-Desktop-Goose" target="_blank" rel="noopener noreferrer">Waterloo Desktop Goose <span aria-hidden="true">↗</span></a></h3><p class="project-description">A goose that lives on your desktop. It wanders around, sits on your windows, and can be picked up and thrown. Native apps for macOS and Windows, with physics and hand-made pixel art.</p><div class="tag-list"><span>Swift</span><span>AppKit</span><span>C#</span><span>WinForms</span><span>Win32</span></div><details><summary>Mission details <span aria-hidden="true">+</span></summary><ul>
+            <li>Implemented transparent, non-activating overlays with selective hit testing and window-aware navigation.</li>
+            <li>Built a 60 FPS simulation with gravity, collisions, Bézier flight paths, and independent character state machines.</li>
+            <li>Created pixel-art sprite tooling and packaged a universal macOS app and self-contained Windows builds.</li>
+          </ul><div class="technical-notes"><p><strong>Cross-Platform Native Architecture:</strong> Built native macOS and Windows desktop companions using Swift/AppKit and C#/WinForms; created borderless, non-activating transparent overlays with selective hit testing so animated objects remain draggable while the rest of the window passes input to underlying applications.</p><p><strong>Window-Aware Navigation:</strong> Derived perchable ledges from live desktop geometry using CGWindowListCopyWindowInfo on macOS and Win32 window enumeration on Windows, subtracting occluded spans and continuously revalidating supports as users move, resize, or close windows.</p><p><strong>Physics &amp; State Machines:</strong> Implemented a 60 FPS simulation with gravity, velocity-based throwing, collision detection, spring-damper neck motion, and Bézier flight paths; coordinated independent state machines for the goose, fish, eggs, goslings, and coyote across walking, chasing, combat, hatching, and teleportation.</p><p><strong>Rendering &amp; Distribution:</strong> Generated runtime pixel-art sprites and animations from canonical character grids, wrote Python tooling to synchronize palettes across Swift and C#, and packaged a universal macOS application plus self-contained Windows x64/ARM64 executables.</p></div></details><a class="project-link" href="https://github.com/alyssadong2006/Waterloo-Desktop-Goose" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a></div></article>
+<article class="project-card reveal" data-category="ai apps">
+      <div class="project-file"><span class="micro">PROJECT / 04</span><span class="micro">SPEECH + EMOTION</span></div>
+      <div class="project-body"><p class="micro project-type">Android · Machine learning</p><h3><a href="https://github.com/BiancaBr7/Moodii/tree/dev" target="_blank" rel="noopener noreferrer">Moodii <span aria-hidden="true">↗</span></a></h3><p class="project-description">An audio diary for Android. Record an entry, get an emotion prediction from your voice, and look back at your mood over time. Built with a speech classifier and an authenticated backend.</p><div class="tag-list"><span>Kotlin</span><span>Jetpack Compose</span><span>Spring Boot</span><span>TensorFlow</span><span>Librosa</span><span>MongoDB</span></div><details><summary>Mission details <span aria-hidden="true">+</span></summary><ul>
+            <li>Connected the Android app to backend APIs with Kotlin coroutines, Retrofit, multipart audio, and JWT authentication.</li>
+            <li>Built a TensorFlow CNN–BiLSTM emotion classifier using Librosa MFCC features from four speech datasets.</li>
+            <li>Containerized the app build, backend, ML API, and MongoDB for Docker and Azure deployment.</li>
+          </ul></details><a class="project-link" href="https://github.com/BiancaBr7/Moodii/tree/dev" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a></div></article>
+<article class="project-card reveal" data-category="apps">
+      <div class="project-file"><span class="micro">PROJECT / 05</span><span class="micro">ACCESSIBILITY</span></div>
+      <div class="project-body"><p class="micro project-type">Web app · Accessibility</p><h3><a href="https://github.com/alyssadong2006/MapAbled" target="_blank" rel="noopener noreferrer">MapAbled <span aria-hidden="true">↗</span></a></h3><p class="project-description">A map where people can find and share accessible places. Point the camera at a sign and it can read the text aloud, using OCR and text-to-speech.</p><div class="tag-list"><span>Python</span><span>Django</span><span>Google Maps API</span><span>EasyOCR</span></div><a class="project-link" href="https://github.com/alyssadong2006/MapAbled" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a></div></article>
+<article class="project-card reveal" data-category="ai apps">
+      <div class="project-file"><span class="micro">PROJECT / 06</span><span class="micro">STUDY MATCHING</span></div>
+      <div class="project-body"><p class="micro project-type">Web app · Education</p><h3><a href="https://github.com/alyssadong2006" target="_blank" rel="noopener noreferrer">Studdy Buddy <span aria-hidden="true">↗</span></a></h3><p class="project-description">Find someone to study with based on your courses, goals, learning style, and schedule. Includes session planning and progress leaderboards.</p><div class="tag-list"><span>Python</span><span>Django</span><span>Clustering</span></div><a class="project-link" href="https://github.com/alyssadong2006" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a></div></article>
+<article class="project-card reveal" data-category="apps">
+      <div class="project-file"><span class="micro">PROJECT / 07</span><span class="micro">COMMUNITY</span></div>
+      <div class="project-body"><p class="micro project-type">Web app · Community</p><h3><a href="https://report-bullying-webapp.vercel.app/" target="_blank" rel="noopener noreferrer">Report Bullying <span aria-hidden="true">↗</span></a></h3><p class="project-description">Built with a collaborator to help students report bullying to schools and organizations. Automatic translation makes it easier to report in the language they’re comfortable with.</p><div class="tag-list"><span>Python</span><span>Django</span><span>SQLite</span><span>Translation API</span></div><a class="project-link" href="https://report-bullying-webapp.vercel.app/" target="_blank" rel="noopener noreferrer">Visit web app <span aria-hidden="true">↗</span></a></div></article></div>
+    </section>
+    <section class="section shell report-panel experience-section" id="experience" aria-labelledby="experience-title"><div>
+      <div class="section-heading reveal"><div><p class="eyebrow">02 / ENGINEERING FIELD NOTES</p><h2 id="experience-title">Field <span class="serif-word">operations.</span></h2></div><p class="report-abstract"><span class="micro">FIELD SUMMARY</span>Product engineering, support systems, and robotic automation. Three teams, three very different problems.</p></div>
+      <div class="experience-list"><article class="experience-card reveal"><div class="experience-meta"><span class="micro">01 / Sep 2026 — Present</span><div class="company-heading"><span class="company-logo" aria-hidden="true"><img src="media/wealthsimple-logo.svg" alt="" width="112" height="20" loading="lazy"></span><h3>Wealthsimple</h3></div><p>Software Engineering Intern · Canada</p></div><div class="experience-body"><ul>
               <li>Rebuilt equity order entry and review experiences in React Native and TypeScript, adding dynamic 25% / 50% / 75% / Max quantity presets and live bid/ask targets.</li>
               <li>Expanded crypto order flows and reused native quote subscriptions with currency-aware caching to keep CAD/USD prices consistent.</li>
               <li>Improved margin and cross-currency calculations, built debounced options buying-power checks, and strengthened screen-reader, focus, large-text, and reduced-motion support.</li>
-            </ul>
-            <div class="tag-list" aria-label="Technologies"><span>React Native</span><span>TypeScript</span><span>GraphQL</span></div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-meta">
-            <p class="experience-date">Jan 2026 — Apr 2026</p>
-            <span class="experience-mark company-logo" aria-hidden="true"><img src="media/shopify-logo.svg" alt="" width="106" height="30" loading="lazy"></span>
-          </div>
-          <div class="experience-body">
-            <h3>Software Engineering Intern <span>· Shopify</span></h3>
-            <p class="experience-location">Canada</p>
-            <ul>
+            </ul><div class="tag-list"><span>React Native</span><span>TypeScript</span><span>GraphQL</span></div><details class="experience-details"><summary>Technical field notes <span aria-hidden="true">+</span></summary><div class="experience-details-body"><p><strong>Equity Order Entry:</strong> Rebuilt market and limit entry and review surfaces for Wealthsimple’s single-page trading flow in React Native and TypeScript; replaced fixed share shortcuts with 25%/50%/75%/Max presets derived from max-order calculations and added selectable bid/ask targets synchronized with live quotes.</p><p><strong>Crypto Trading Flows:</strong> Built a crypto-specific single-page header and expanded entry, review, and post-submit details across all orders; shared one native quote subscription across price and performance, filtered updates by field, and cached raw quotes by currency to prevent blank values when switching CAD/USD.</p><p><strong>Margin &amp; Cross-Currency Correctness:</strong> Added Cash used and expandable Margin used breakdowns by calculating amendment deltas against funds reserved for the original order; corrected account-currency totals to eliminate double FX conversion and shipped a same-day production hotfix</p><p><strong>Options Buying Power:</strong> Built live buying-power estimates using a debounced GraphQL pre-flight check for all orders, cancelling stale requests as quantity or price changed.</p><p><strong>Trading Accessibility:</strong> Improved large-text layouts, screen-reader labels, focus behavior, and reduced-motion support across order experiences, preserving order details and controls at accessibility text sizes.</p></div></details></div></article>
+<article class="experience-card reveal"><div class="experience-meta"><span class="micro">02 / Jan 2026 — Apr 2026</span><div class="company-heading"><span class="company-logo" aria-hidden="true"><img src="media/shopify-logo.svg" alt="" width="106" height="30" loading="lazy"></span><h3>Shopify</h3></div><p>Software Engineering Intern · Canada</p></div><div class="experience-body"><ul>
               <li>Built and shipped an end-to-end internal support escalation workflow across a Ruby routing service and a React / TypeScript advisor interface, improving correctly routed chat escalations by 13%.</li>
               <li>Integrated Zendesk and Twilio with real-time routing logic, then developed an auditable event stream and secure, session-based PII access controls.</li>
-            </ul>
-            <div class="tag-list" aria-label="Technologies"><span>Ruby</span><span>React</span><span>TypeScript</span><span>GraphQL</span></div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-meta">
-            <p class="experience-date">May 2025 — Aug 2025</p>
-            <span class="experience-mark company-logo" aria-hidden="true"><img src="media/promach-logo.png" alt="" width="106" height="34" loading="lazy"></span>
-          </div>
-          <div class="experience-body">
-            <h3>Software Engineering Intern <span>· Promach</span></h3>
-            <p class="experience-location">China</p>
-            <ul>
+            </ul><div class="tag-list"><span>Ruby</span><span>React</span><span>TypeScript</span><span>GraphQL</span></div><details class="experience-details"><summary>Technical field notes <span aria-hidden="true">+</span></summary><div class="experience-details-body"><p><strong>Full-Stack Escalation Overhaul:</strong> Built and shipped an end-to-end escalation workflow for Shopify’s internal customer-support platform, spanning a Ruby routing service and a React/TypeScript advisor interface; accelerated correctly routed internal chat escalations by 13%.</p><p><strong>Service Routing:</strong> Engineered a real-time escalation engine in Ruby, integrating Zendesk and Twilio APIs to automate ticket routing; implemented custom state-machine logic and skill-mapping heuristics to synchronize agent availability and session metadata across third-party platforms.</p><p><strong>Component Architecture:</strong> Engineered a modular UI overhaul for the internal support platform using TypeScript and React, implementing complex state management for new multi-functional advisor workflows and improving frontend performance through optimized GraphQL fragment colocation.</p><p><strong>Auditability:</strong> Designed a high-throughput event-logging service using TypeScript and GraphQL to generate immutable audit trails; architected a centralized event schema to aggregate disparate advisor interactions into a chronological stream with sub-second query performance.</p><p><strong>Identity &amp; Access Management:</strong> Developed an automated PII access layer through the Minerva framework, requiring identity and intent verification and issuing ephemeral session-based tokens that expired upon chat termination to enforce zero-trust security principles.</p></div></details></div></article>
+<article class="experience-card reveal"><div class="experience-meta"><span class="micro">03 / May 2025 — Aug 2025</span><div class="company-heading"><span class="company-logo" aria-hidden="true"><img src="media/promach-logo.png" alt="" width="106" height="34" loading="lazy"></span><h3>Promach</h3></div><p>Software Engineering Intern · China</p></div><div class="experience-body"><ul>
               <li>Extended a client-facing website with CMS features, optimized MySQL queries, and strengthened access controls and HTTPS/TLS configuration.</li>
               <li>Programmed FANUC robotic arms and integrated them with PLC controllers for a stacking and boxing line, adding fail-safe interrupts and coordinated motion control.</li>
-            </ul>
-            <div class="tag-list" aria-label="Technologies"><span>MySQL</span><span>FANUC</span><span>PLC</span><span>EtherNet/IP</span></div>
-          </div>
+            </ul><div class="tag-list"><span>MySQL</span><span>FANUC</span><span>PLC</span><span>EtherNet/IP</span></div><details class="experience-details"><summary>Technical field notes <span aria-hidden="true">+</span></summary><div class="experience-details-body"><p><strong>Website Maintenance:</strong> Extended the company’s client-facing website by adding new CMS-driven features, optimized MySQL queries for reduced load times, and hardened security by applying role-based access controls (RBAC) and HTTPS/TLS configurations.</p><p><strong>Robotics Integration:</strong> Programmed FANUC robotic arms using the TP language, integrated robots with PLC controllers through Ethernet/IP, and collaborated on designing ladder logic routines. Implemented fail-safe interrupt routines and coordinated motion control for a stacking/boxing automation line, reducing downtime from manual interventions.</p></div></details></div></article></div>
+    </div></section>
+    <section class="section shell report-panel" id="about" aria-labelledby="about-title">
+      <div class="about-layout"><div class="about-copy reveal"><p class="eyebrow">03 / CREW PROFILE &amp; ONBOARD SYSTEMS</p><h2 id="about-title">Crew <span class="serif-word">profile.</span></h2><p>I’m studying Applied Mathematics at Waterloo, with Scientific Computing and Machine Learning. I like getting an idea working—from the interface down to the parts you don’t see.</p><div class="education"><span class="education-logo" aria-hidden="true"><img src="media/waterloo-logo.svg" alt="" width="132" height="32" loading="lazy"></span><div><h3>University of Waterloo</h3><p>Bachelor of Mathematics<br>Applied Mathematics · Scientific Computing &amp; Machine Learning</p><span class="micro">SEP 2024 — PRESENT / WATERLOO, ON</span></div></div></div><div class="toolkit reveal"><div class="toolkit-heading micro"><span>ONBOARD TOOLKIT</span><span>SYS. 004</span></div><div class="skill-row"><h3>Languages</h3><p>Python, TypeScript, JavaScript, Ruby, Java, Kotlin, Swift, C#, SQL, C</p></div>
+<div class="skill-row"><h3>Frameworks &amp; libraries</h3><p>React, React Native, FastAPI, Pydantic, Playwright, Django, Flask, Spring Boot, Jetpack Compose, AppKit, WinForms</p></div>
+<div class="skill-row"><h3>ML, data &amp; APIs</h3><p>PyTorch, Hugging Face, TensorFlow, Librosa, GraphQL, REST, WebSockets, MySQL, MongoDB, SQLite</p></div>
+<div class="skill-row"><h3>Tools &amp; infrastructure</h3><p>Git, Docker, GitHub Actions, CI/CD, Azure App Service, Linux, Bash, Pytest</p></div></div></div>
+      <a class="workflow-callout reveal" href="ai-workflow.html"><div><p class="eyebrow">ENGINEERING FIELD GUIDE / AI WORKFLOW</p><h3>How I work with AI</h3><p>A detailed look at the factory, the agents, the checks, and the decisions I keep in my hands.</p></div><span class="workflow-callout-link">Read the walkthrough <span aria-hidden="true">↗</span></span></a>
+    </section>
+    <section class="section shell report-panel" id="hobbies" aria-labelledby="hobbies-title">
+      <div class="section-heading reveal"><div><p class="eyebrow">04 / HOBBIES &amp; OFF-DUTY OBSERVATIONS</p><h2 id="hobbies-title">Off-duty <span class="serif-word">notes.</span></h2></div><p class="hobbies-intro">A few things I spend time on when I’m not coding.</p></div>
+      <div class="hobbies-grid">
+        <article class="hobby-card hobby-stargazing reveal" aria-labelledby="stargazing-title">
+          <figure class="moon-observation"><img src="media/moon-observation.jpg" alt="Close-up of the Moon against a dark sky, with visible craters and a soft halo." width="890" height="1186" loading="lazy" decoding="async"><figcaption><span>MOON / PERSONAL PHOTO</span><span>Moon, up close.</span></figcaption></figure>
+          <div><p class="eyebrow">LOOKING UP / NIGHT SKY</p><h3 id="stargazing-title">Stargazing</h3><p>Where I live, there’s very little light pollution. I love looking up at the night sky and taking my time with it. As my eyes adjust, more and more stars begin to appear.</p><p>Thinking about how vast and ancient the universe is helps put things in perspective. A mistake I’ve made or something I’m worried about feels less overwhelming. It reminds me that there’s always another chance, and a future I can keep working towards.</p></div>
         </article>
+        <article class="hobby-card reveal" aria-labelledby="digital-art-title"><p class="eyebrow">MAKING THINGS / IPAD</p><h3 id="digital-art-title">Digital art</h3><p>When I have some free time, I usually pick up my iPad and draw. I love being able to put what I’m imagining onto a screen and watch it take shape.</p><p>Programming gives me a similar feeling. Instead of drawing an idea, I can build it into something that works and responds. Being able to bring an idea to life is what keeps me wanting to learn more about programming and machine learning.</p></article>
+        <article class="hobby-card reveal" aria-labelledby="swimming-title"><p class="eyebrow">LEARNING COURAGE / WATER</p><h3 id="swimming-title">Swimming</h3><p>I used to be scared of the water and wanted nothing to do with it. Learning to swim meant facing that fear, and I pushed myself to keep going. After years of practice and hard work, I qualified as a lifeguard.</p><p>The training taught me more than how to swim. I learned how to stay calm under pressure, respond when things get intense, and care for someone who’s injured.</p></article>
       </div>
     </section>
-
-    <section class="featured-section" aria-labelledby="featured-title">
-      <div class="shell section">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">A few things I’ve made</p>
-            <h2 id="featured-title">Selected projects</h2>
-          </div>
-          <a class="text-link" href="projects.html">See all projects <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="project-grid featured-grid">
-          <article class="project-card featured-card">
-            <div class="project-card-top"><span class="project-index">01</span><span class="project-type">AI · Neuroevolution</span></div>
-            <h3>Platformer Evolution Lab</h3>
-            <p>An interactive platformer experiment where neural-network agents tackle user-designed levels, evolving their movement through selection, crossover, and mutation.</p>
-            <div class="tag-list"><span>TypeScript</span><span>React</span><span>Genetic algorithms</span></div>
-            <a class="card-link" href="https://github.com/alyssadong2006/Platformer-Evolution-Lab" target="_blank" rel="noopener noreferrer" aria-label="View Platformer Evolution Lab on GitHub">View project <span aria-hidden="true">↗</span></a>
-          </article>
-          <article class="project-card featured-card">
-            <div class="project-card-top"><span class="project-index">02</span><span class="project-type">AI · Security</span></div>
-            <h3>SafeParse</h3>
-            <p>An AI-assisted web-content security gateway that combines safe browser ingestion, a fine-tuned classifier, and auditable threat reports.</p>
-            <div class="tag-list"><span>FastAPI</span><span>Playwright</span><span>PyTorch</span></div>
-            <a class="card-link" href="https://github.com/alyssadong2006/SafeParse-v2" target="_blank" rel="noopener noreferrer" aria-label="View SafeParse on GitHub">View project <span aria-hidden="true">↗</span></a>
-          </article>
-          <article class="project-card featured-card">
-            <div class="project-card-top"><span class="project-index">03</span><span class="project-type">Desktop · Native</span></div>
-            <h3>Waterloo Desktop Goose</h3>
-            <p>A playful desktop companion for macOS and Windows, with native overlays, window-aware navigation, physics, and custom pixel-art animation.</p>
-            <div class="tag-list"><span>Swift</span><span>C#</span><span>AppKit</span></div>
-            <a class="card-link" href="https://github.com/alyssadong2006/Waterloo-Desktop-Goose" target="_blank" rel="noopener noreferrer" aria-label="View Waterloo Desktop Goose on GitHub">View project <span aria-hidden="true">↗</span></a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section shell about-section" id="about" aria-labelledby="about-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">What I bring to the table</p>
-          <h2 id="about-title">Curiosity, craft &amp; a broad toolkit</h2>
-        </div>
-        <p class="section-lede">I like working across the stack: shaping a clear interface, making the underlying systems dependable, and measuring whether the result actually helps.</p>
-      </div>
-      <div class="skills-grid">
-        <article class="skill-card">
-          <span class="skill-number">01</span>
-          <h3>Languages</h3>
-          <p>Python, TypeScript, JavaScript, Ruby, Java, Kotlin, Swift, C#, SQL, C</p>
-        </article>
-        <article class="skill-card">
-          <span class="skill-number">02</span>
-          <h3>Frameworks &amp; libraries</h3>
-          <p>React, React Native, FastAPI, Pydantic, Playwright, Django, Flask, Spring Boot, Jetpack Compose, AppKit, WinForms</p>
-        </article>
-        <article class="skill-card">
-          <span class="skill-number">03</span>
-          <h3>ML, data &amp; APIs</h3>
-          <p>PyTorch, Hugging Face, TensorFlow, Librosa, GraphQL, REST, WebSockets, MySQL, MongoDB, SQLite</p>
-        </article>
-        <article class="skill-card">
-          <span class="skill-number">04</span>
-          <h3>Tools &amp; infrastructure</h3>
-          <p>Git, Docker, GitHub Actions, CI/CD, Azure App Service, Linux, Bash, Pytest</p>
-        </article>
-      </div>
-      <div class="education-card">
-        <span class="education-icon university-logo" aria-hidden="true"><img src="media/waterloo-logo.svg" alt="" width="132" height="32" loading="lazy"></span>
-        <div>
-          <p class="eyebrow">Currently learning</p>
-          <h3>University of Waterloo</h3>
-          <p>Bachelor of Mathematics, Applied Mathematics with Scientific Computing and Machine Learning <span>· Sep 2024 — Present · Waterloo, ON</span></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-section" id="contact" aria-labelledby="contact-title">
-      <div class="shell contact-content">
-        <p class="eyebrow">Have a good problem to solve?</p>
-        <h2 id="contact-title">Let’s make something useful.</h2>
-        <p>I’m always happy to connect about thoughtful products, engineering, and new ideas.</p>
-        <a class="button button-light" href="mailto:alydong2006@gmail.com">alydong2006@gmail.com <span aria-hidden="true">↗</span></a>
-        <a class="contact-phone" href="tel:+16476486752">+1 647 648 6752</a>
-      </div>
-    </section>
+    <section class="contact-section shell report-panel" id="contact" aria-labelledby="contact-title"><div class="contact-orbit" aria-hidden="true"></div><div class="reveal"><p class="eyebrow"><span class="status-dot"></span> OPEN FREQUENCY / NO DISTRESS SIGNAL REQUIRED</p><h2 id="contact-title">Send a <span class="serif-word">signal.</span></h2><a class="contact-email" href="mailto:alydong2006@gmail.com">alydong2006@gmail.com <span aria-hidden="true">↗</span></a><div class="contact-links"><a href="https://github.com/alyssadong2006" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/alyssa-dong-00a2b2275/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="tel:+16476486752">+1 647 648 6752 ↗</a></div></div></section>
   </main>
+  <footer class="shell"><a class="brand" href="#">✳ AD</a><p class="micro">© <span id="current-year">2026</span> ALYSSA DONG</p><span class="micro">END OF TRANSMISSION / THANKS FOR STOPPING BY.</span><button id="motion-toggle" type="button" aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span></button></footer>
 
-  <footer class="site-footer shell">
-    <a class="brand footer-brand" href="index.html">AD<span>.</span></a>
-    <p>Designed and built by Alyssa Dong · <span id="current-year">2026</span></p>
-    <div class="footer-links">
-      <a href="https://github.com/alyssadong2006" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/alyssa-dong-00a2b2275/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="mailto:alydong2006@gmail.com">Email</a>
-    </div>
-  </footer>
+  <nav class="site-version-switch" data-version="v3" aria-label="Website version" onclick="event.stopPropagation()"><span>Version</span><a href="versions/v1/index.html" aria-label="v1: original site">v1</a><a href="versions/v2/index.html" aria-label="v2: beach, pixel and 3D">v2</a><a href="index.html" aria-label="v3: current planet site" aria-current="page">v3</a></nav>
 </body>
 </html>

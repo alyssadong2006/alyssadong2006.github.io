@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Alyssa Dong is a software engineering intern and University of Waterloo student building thoughtful, useful software.">
+  <meta name="theme-color" content="#d8eff6">
+  <title>Alyssa Dong | Software Engineer</title>
+  <link rel="icon" href="media/avatar.png">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="beach-3d.css">
+  <link rel="stylesheet" href="daylight-theme.css">
+  <link rel="stylesheet" href="cute-daylight.css">
+  <link rel="stylesheet" href="company-logos.css">
+  <link rel="stylesheet" href="floral-frame.css">
+  <script type="module" src="theme-switch.js"></script>
+  <script type="module" src="sunflower-trail.js"></script>
+  <script type="module" src="ocean-world.js"></script>
+  <script src="main.js" defer></script>
+  <script type="module" src="beach-3d.js"></script>
+
+  <link rel="stylesheet" href="../../version-switch.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-nav shell" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Alyssa Dong, home">AD<span>.</span></a>
+      <div class="nav-links">
+        <a href="#experience">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="#about">About</a>
+        <a class="nav-contact" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="beach-scene" aria-hidden="true">
+    <i class="pixel-sun"></i>
+    <i class="pixel-cloud cloud-one"></i>
+    <i class="pixel-cloud cloud-two"></i>
+    <i class="pixel-cloud cloud-three"></i>
+    <i class="pixel-bird bird-one"></i>
+    <i class="pixel-bird bird-two"></i>
+    <div class="beach-water water-base"></div>
+    <div class="beach-wave wave-far"></div>
+    <div class="beach-wave wave-middle"></div>
+    <div class="beach-wave wave-near"></div>
+    <div class="beach-foam foam-far"></div>
+    <div class="beach-foam foam-near"></div>
+    <div class="beach-sand"></div>
+    <div class="beach-sand-specks"></div>
+    <i class="pixel-shell shell-left"></i>
+    <i class="pixel-shell shell-right"></i>
+    <i class="pixel-seaglass"></i>
+    <i class="pixel-starfish"></i>
+    <i class="pixel-footsteps"></i>
+    <i class="pixel-seaweed"></i>
+  </div>
+
+  <main id="main" class="game-world">
+    <audio id="bgmusic" src="media/waves.mp3" loop preload="none"></audio>
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Player 1 · Software engineer · Waterloo, Ontario</p>
+        <h1 id="hero-title">I build software that makes complex things <span>feel simple.</span></h1>
+        <p class="hero-summary">I’m Alyssa, a University of Waterloo student who enjoys turning tricky problems into thoughtful, reliable products—from financial workflows to cross-platform apps and applied machine learning.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="projects.html">Start exploring <span aria-hidden="true">↗</span></a>
+          <a class="button button-quiet" href="mailto:alydong2006@gmail.com">Get in touch</a>
+          <button class="button button-quiet sound-toggle" id="sound-toggle" type="button" aria-pressed="false">Play ocean sounds <span aria-hidden="true">♫</span></button>
+        </div>
+        <p class="sound-status" id="sound-status" aria-live="polite"></p>
+        <div class="hero-links" aria-label="Professional profiles">
+          <a href="https://github.com/alyssadong2006" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <a href="https://www.linkedin.com/in/alyssa-dong-00a2b2275/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="mailto:alydong2006@gmail.com">Email <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="hero-art beach-diorama">
+        <div class="frame-botanicals" aria-hidden="true">
+          <span class="frame-garland"></span>
+          <span class="frame-flora frame-flora-left"></span>
+          <span class="frame-flora frame-flora-left-bud"></span>
+          <span class="frame-flora frame-flora-right"></span>
+          <span class="frame-flora frame-flora-right-bud"></span>
+          <span class="frame-flora frame-flora-bottom-left"></span>
+          <span class="frame-flora frame-flora-bottom-right"></span>
+        </div>
+        <button class="diorama-switch" id="diorama-switch" type="button" aria-label="Switch to the 3D beach theme" aria-pressed="false"><span class="visually-hidden">Change the scenery</span></button>
+        <div class="diorama-heading"><span aria-hidden="true">✳</span> A little place to slow down <span class="diorama-coordinate">ISLAND 01</span></div>
+        <div id="beach-viewport" class="beach-viewport" role="img" aria-label="A beach diorama with palm trees, a striped umbrella, diving equipment, seashells, circling seabirds, and turquoise waves.">
+          <div class="beach-fallback" aria-hidden="true"><span>🌴</span><span>🏖️</span><span>🐚</span></div>
+        </div>
+        <div class="diorama-footer">
+          <img src="media/avatar.png" alt="Portrait of Alyssa Dong" width="40" height="40">
+          <p>Nothing beats a beach day<br><strong>after a good dive.</strong></p>
+          <span class="diorama-hint" id="diorama-hint">↖ Click to switch to 3D</span>
+        </div>
+      </div>
+    </section>
+
+    <p class="game-hint shell"><span aria-hidden="true">✦</span> Click an empty spot to spawn a tiny 404 glitch!</p>
+    <p class="visually-hidden" id="game-status" aria-live="polite"></p>
+
+    <section class="intro-strip" aria-label="Career highlights">
+      <div class="shell intro-strip-inner">
+        <p>Currently building at <strong>Wealthsimple</strong></p>
+        <span aria-hidden="true">✳</span>
+        <p>Previously at <strong>Shopify</strong> &amp; <strong>Promach</strong></p>
+        <span aria-hidden="true">✳</span>
+        <p><strong>Applied Math + Scientific Computing + Machine Learning @ UWaterloo</strong></p>
+      </div>
+    </section>
+
+    <section class="section shell" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Where I’ve made an impact</p>
+          <h2 id="experience-title">Experience</h2>
+        </div>
+        <p class="section-lede">A mix of product engineering, platform work, and automation—built with teams that care about the details.</p>
+      </div>
+      <div class="experience-list">
+        <article class="experience-card">
+          <div class="experience-meta">
+            <p class="experience-date">Sep 2026 — Present</p>
+            <span class="experience-mark company-logo" aria-hidden="true"><img src="media/wealthsimple-logo.svg" alt="" width="112" height="20" loading="lazy"></span>
+          </div>
+          <div class="experience-body">
+            <h3>Software Engineering Intern <span>· Wealthsimple</span></h3>
+            <p class="experience-location">Canada</p>
+            <ul>
+              <li>Rebuilt equity order entry and review experiences in React Native and TypeScript, adding dynamic 25% / 50% / 75% / Max quantity presets and live bid/ask targets.</li>
+              <li>Expanded crypto order flows and reused native quote subscriptions with currency-aware caching to keep CAD/USD prices consistent.</li>
+              <li>Improved margin and cross-currency calculations, built debounced options buying-power checks, and strengthened screen-reader, focus, large-text, and reduced-motion support.</li>
+            </ul>
+            <div class="tag-list" aria-label="Technologies"><span>React Native</span><span>TypeScript</span><span>GraphQL</span></div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-meta">
+            <p class="experience-date">Jan 2026 — Apr 2026</p>
+            <span class="experience-mark company-logo" aria-hidden="true"><img src="media/shopify-logo.svg" alt="" width="106" height="30" loading="lazy"></span>
+          </div>
+          <div class="experience-body">
+            <h3>Software Engineering Intern <span>· Shopify</span></h3>
+            <p class="experience-location">Canada</p>
+            <ul>
+              <li>Built and shipped an end-to-end internal support escalation workflow across a Ruby routing service and a React / TypeScript advisor interface, improving correctly routed chat escalations by 13%.</li>
+              <li>Integrated Zendesk and Twilio with real-time routing logic, then developed an auditable event stream and secure, session-based PII access controls.</li>
+            </ul>
+            <div class="tag-list" aria-label="Technologies"><span>Ruby</span><span>React</span><span>TypeScript</span><span>GraphQL</span></div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-meta">
+            <p class="experience-date">May 2025 — Aug 2025</p>
+            <span class="experience-mark company-logo" aria-hidden="true"><img src="media/promach-logo.png" alt="" width="106" height="34" loading="lazy"></span>
+          </div>
+          <div class="experience-body">
+            <h3>Software Engineering Intern <span>· Promach</span></h3>
+            <p class="experience-location">China</p>
+            <ul>
+              <li>Extended a client-facing website with CMS features, optimized MySQL queries, and strengthened access controls and HTTPS/TLS configuration.</li>
+              <li>Programmed FANUC robotic arms and integrated them with PLC controllers for a stacking and boxing line, adding fail-safe interrupts and coordinated motion control.</li>
+            </ul>
+            <div class="tag-list" aria-label="Technologies"><span>MySQL</span><span>FANUC</span><span>PLC</span><span>EtherNet/IP</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="featured-section" aria-labelledby="featured-title">
+      <div class="shell section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">A few things I’ve made</p>
+            <h2 id="featured-title">Selected projects</h2>
+          </div>
+          <a class="text-link" href="projects.html">See all projects <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="project-grid featured-grid">
+          <article class="project-card featured-card">
+            <div class="project-card-top"><span class="project-index">01</span><span class="project-type">AI · Neuroevolution</span></div>
+            <h3>Platformer Evolution Lab</h3>
+            <p>An interactive platformer experiment where neural-network agents tackle user-designed levels, evolving their movement through selection, crossover, and mutation.</p>
+            <div class="tag-list"><span>TypeScript</span><span>React</span><span>Genetic algorithms</span></div>
+            <a class="card-link" href="https://github.com/alyssadong2006/Platformer-Evolution-Lab" target="_blank" rel="noopener noreferrer" aria-label="View Platformer Evolution Lab on GitHub">View project <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="project-card featured-card">
+            <div class="project-card-top"><span class="project-index">02</span><span class="project-type">AI · Security</span></div>
+            <h3>SafeParse</h3>
+            <p>An AI-assisted web-content security gateway that combines safe browser ingestion, a fine-tuned classifier, and auditable threat reports.</p>
+            <div class="tag-list"><span>FastAPI</span><span>Playwright</span><span>PyTorch</span></div>
+            <a class="card-link" href="https://github.com/alyssadong2006/SafeParse-v2" target="_blank" rel="noopener noreferrer" aria-label="View SafeParse on GitHub">View project <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="project-card featured-card">
+            <div class="project-card-top"><span class="project-index">03</span><span class="project-type">Desktop · Native</span></div>
+            <h3>Waterloo Desktop Goose</h3>
+            <p>A playful desktop companion for macOS and Windows, with native overlays, window-aware navigation, physics, and custom pixel-art animation.</p>
+            <div class="tag-list"><span>Swift</span><span>C#</span><span>AppKit</span></div>
+            <a class="card-link" href="https://github.com/alyssadong2006/Waterloo-Desktop-Goose" target="_blank" rel="noopener noreferrer" aria-label="View Waterloo Desktop Goose on GitHub">View project <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell about-section" id="about" aria-labelledby="about-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">What I bring to the table</p>
+          <h2 id="about-title">Curiosity, craft &amp; a broad toolkit</h2>
+        </div>
+        <p class="section-lede">I like working across the stack: shaping a clear interface, making the underlying systems dependable, and measuring whether the result actually helps.</p>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-card">
+          <span class="skill-number">01</span>
+          <h3>Languages</h3>
+          <p>Python, TypeScript, JavaScript, Ruby, Java, Kotlin, Swift, C#, SQL, C</p>
+        </article>
+        <article class="skill-card">
+          <span class="skill-number">02</span>
+          <h3>Frameworks &amp; libraries</h3>
+          <p>React, React Native, FastAPI, Pydantic, Playwright, Django, Flask, Spring Boot, Jetpack Compose, AppKit, WinForms</p>
+        </article>
+        <article class="skill-card">
+          <span class="skill-number">03</span>
+          <h3>ML, data &amp; APIs</h3>
+          <p>PyTorch, Hugging Face, TensorFlow, Librosa, GraphQL, REST, WebSockets, MySQL, MongoDB, SQLite</p>
+        </article>
+        <article class="skill-card">
+          <span class="skill-number">04</span>
+          <h3>Tools &amp; infrastructure</h3>
+          <p>Git, Docker, GitHub Actions, CI/CD, Azure App Service, Linux, Bash, Pytest</p>
+        </article>
+      </div>
+      <div class="education-card">
+        <span class="education-icon university-logo" aria-hidden="true"><img src="media/waterloo-logo.svg" alt="" width="132" height="32" loading="lazy"></span>
+        <div>
+          <p class="eyebrow">Currently learning</p>
+          <h3>University of Waterloo</h3>
+          <p>Bachelor of Mathematics, Applied Mathematics with Scientific Computing and Machine Learning <span>· Sep 2024 — Present · Waterloo, ON</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="shell contact-content">
+        <p class="eyebrow">Have a good problem to solve?</p>
+        <h2 id="contact-title">Let’s make something useful.</h2>
+        <p>I’m always happy to connect about thoughtful products, engineering, and new ideas.</p>
+        <a class="button button-light" href="mailto:alydong2006@gmail.com">alydong2006@gmail.com <span aria-hidden="true">↗</span></a>
+        <a class="contact-phone" href="tel:+16476486752">+1 647 648 6752</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <a class="brand footer-brand" href="index.html">AD<span>.</span></a>
+    <p>Designed and built by Alyssa Dong · <span id="current-year">2026</span></p>
+    <div class="footer-links">
+      <a href="https://github.com/alyssadong2006" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/alyssa-dong-00a2b2275/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:alydong2006@gmail.com">Email</a>
+    </div>
+  </footer>
+
+  <nav class="site-version-switch" data-version="v2" aria-label="Website version" onclick="event.stopPropagation()"><span>Version</span><a href="../../versions/v1/index.html" aria-label="v1: original site">v1</a><a href="../../versions/v2/index.html" aria-label="v2: beach, pixel and 3D" aria-current="page">v2</a><a href="../../index.html" aria-label="v3: current planet site">v3</a></nav>
+</body>
+</html>

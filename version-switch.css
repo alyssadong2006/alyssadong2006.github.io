@@ -1,0 +1,112 @@
+/* Only the added switcher is themed. Historical UI and scenery controls stay untouched. */
+.site-version-switch {
+  all: initial;
+  --vs-bg: #211722f5;
+  --vs-border: #efb8cc70;
+  --vs-radius: 6px;
+  --vs-link-radius: 4px;
+  --vs-ink: #f8edf4;
+  --vs-label: #d6bdcf;
+  --vs-hover: #efb8cc20;
+  --vs-selected: linear-gradient(125deg, #edbfd2, #cbbce4);
+  --vs-selected-ink: #281e2c;
+  --vs-focus: #fff1f7;
+  --vs-font: 'IBM Plex Mono', ui-monospace, monospace;
+  --vs-font-size: 12px;
+  --vs-label-size: 10px;
+  --vs-shadow: none;
+  position: fixed;
+  right: max(12px, env(safe-area-inset-right));
+  bottom: max(12px, env(safe-area-inset-bottom));
+  z-index: 80;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 4px;
+  box-sizing: border-box;
+  border: 1px solid var(--vs-border);
+  border-radius: var(--vs-radius);
+  background: var(--vs-bg);
+  color: var(--vs-ink);
+  font: 500 var(--vs-font-size)/1.2 var(--vs-font);
+  box-shadow: var(--vs-shadow);
+  isolation: isolate;
+}
+/* v1: the original blue window chrome and raised, square controls. */
+.site-version-switch[data-version="v1"] {
+  --vs-bg: #e6f0f5;
+  --vs-border: #008acf;
+  --vs-radius: 0px;
+  --vs-link-radius: 0px;
+  --vs-ink: #076e9c;
+  --vs-label: #245468;
+  --vs-hover: #c6e4f1;
+  --vs-selected: #008acf;
+  --vs-selected-ink: #fff;
+  --vs-focus: #163d6c;
+  --vs-font: monospace;
+  --vs-shadow: 3px 3px 0 #2d5566;
+  border-width: 2px;
+  border-style: outset;
+}
+/* v2: match its default pixel beach, above the existing scenery button. */
+.site-version-switch[data-version="v2"] {
+  --vs-bg: #fff6db;
+  --vs-border: #8794ad;
+  --vs-radius: 0px;
+  --vs-link-radius: 0px;
+  --vs-ink: #354f68;
+  --vs-label: #51657b;
+  --vs-hover: #e8e2f3;
+  --vs-selected: #dec8e8;
+  --vs-selected-ink: #354f68;
+  --vs-focus: #397f87;
+  --vs-font: 'Pixelify', monospace;
+  --vs-font-size: 16px;
+  --vs-label-size: 13px;
+  --vs-shadow: 3px 3px 0 #9aa9bf;
+  border-width: 2px;
+  bottom: max(84px, calc(env(safe-area-inset-bottom) + 84px));
+}
+/* Follow v2's existing theme class immediately, with no extra JS or saved state. */
+body.daylight-theme .site-version-switch[data-version="v2"] {
+  --vs-bg: linear-gradient(180deg, #fffdfd, #eef7ff 60%, #e6e3f6);
+  --vs-border: #d8cbe6;
+  --vs-radius: 22px;
+  --vs-link-radius: 16px;
+  --vs-ink: #554665;
+  --vs-label: #61546f;
+  --vs-hover: #ebdeef;
+  --vs-selected: linear-gradient(180deg, #fceaf4, #e5d5f0);
+  --vs-selected-ink: #554665;
+  --vs-focus: #75568f;
+  --vs-font: 'Quicksand', ui-rounded, system-ui, sans-serif;
+  --vs-font-size: 13px;
+  --vs-label-size: 11px;
+  --vs-shadow: inset 0 2px 2px #fff, 0 3px 0 #b8a6cb, 0 5px 9px #50445f26;
+  border-width: 1px;
+}
+.site-version-switch > span {
+  all: unset;
+  padding: 0 9px;
+  font: 500 var(--vs-label-size)/1.2 var(--vs-font);
+  color: var(--vs-label);
+}
+.site-version-switch > a {
+  all: unset;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 6px;
+  border-radius: var(--vs-link-radius);
+  color: var(--vs-ink);
+  font: 600 var(--vs-font-size)/1.2 var(--vs-font);
+  text-decoration: none;
+  cursor: pointer;
+}
+.site-version-switch > a:hover { background: var(--vs-hover); }
+.site-version-switch > a[aria-current="page"] { background: var(--vs-selected); color: var(--vs-selected-ink); }
+.site-version-switch > a:focus-visible { outline: 2px solid var(--vs-focus); outline-offset: -3px; }
+@media print { .site-version-switch { display: none; } }

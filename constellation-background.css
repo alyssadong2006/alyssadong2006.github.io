@@ -1,0 +1,28 @@
+.constellation-background {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: -2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .9s ease;
+  touch-action: none;
+}
+.constellation-background[data-ready="true"] { opacity: .82; }
+.constellation-background[data-unavailable="true"] { opacity: 0; }
+@media (max-aspect-ratio: 1/1) { .constellation-background[data-ready="true"] { opacity: .7; } }
+body.motion-paused .constellation-background { transition: none; }
+@media (prefers-reduced-motion: reduce) { .constellation-background { transition: none; } }
+.background-al-marker { position: fixed; top: 0; left: 0; z-index: -2; pointer-events: none; color: #f6cce1; }
+.background-al-marker[hidden] { display: none; }
+.background-al-marker i { position: absolute; width: 44px; height: 1px; background: #efb8cc99; transform: rotate(-50deg); transform-origin: left; }
+.background-al-marker span { position: absolute; left: 27px; top: -48px; width: 80px; padding: 5px 8px; border-left: 1px solid #efb8cc88; border-radius: 2px; background: #100c13c9; box-shadow: 0 0 18px #efb8cc10; }
+.background-al-marker b { display: block; font: 500 11px/1.5 var(--mono); letter-spacing: .09em; }
+.background-al-marker[data-side="left"] span { left: -107px; border-left: 0; border-right: 1px solid #efb8cc88; }
+.background-al-marker[data-side="left"] i { transform: rotate(-130deg); }
+.background-al-marker[data-vertical="below"] span { top: 14px; }
+.background-al-marker[data-vertical="below"] i { width: 40px; transform: rotate(45deg); }
+.background-al-marker[data-side="left"][data-vertical="below"] i { transform: rotate(135deg); }
+@media print { .constellation-background, .background-al-marker { display: none !important; } }

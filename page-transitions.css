@@ -1,0 +1,22 @@
+/* Pixel wipe overlay. Canvas is created only while a transition runs; never blocks input. */
+canvas.pixel-transition {
+  position: fixed;
+  z-index: 90; /* below boot screen */
+  display: block;
+  pointer-events: none !important;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  background: transparent;
+  /* CSS failsafe: if JS stalls, the overlay disappears on its own */
+  animation: pixel-transition-failsafe 0s linear 2.4s forwards !important;
+}
+canvas.pixel-transition.is-arriving {
+  will-change: opacity;
+  animation: pixel-arrival 180ms steps(6, end) both !important;
+}
+@keyframes pixel-arrival { from { opacity: 1; } to { opacity: 0; visibility: hidden; } }
+@keyframes pixel-transition-failsafe { to { visibility: hidden; } }
+@media print, (prefers-reduced-motion: reduce) {
+  canvas.pixel-transition { display: none !important; }
+}
+body.motion-paused canvas.pixel-transition { display: none !important; }

@@ -1,0 +1,79 @@
+/* Scientific spacecraft report panels. Decorative only; content never hidden. */
+.report-panel{--rp-a:239,184,204;--rp-b:190,170,240;--rp-c:130,220,235;--rp-line:rgba(var(--rp-a),.5);
+  position:relative;isolation:isolate;margin-block:40px;padding:clamp(24px,3.2vw,36px);
+  border:1px solid rgba(var(--rp-a),.28);border-radius:4px;
+  background:
+    radial-gradient(ellipse 70% 60% at 100% 0%,rgba(var(--rp-b),.16),transparent 70%),
+    radial-gradient(ellipse 60% 55% at 0% 100%,rgba(var(--rp-c),.11),transparent 70%),
+    linear-gradient(160deg,rgba(var(--rp-a),.10),rgba(255,255,255,.025) 55%,rgba(var(--rp-b),.07));
+  background-color:#100c1399;
+  box-shadow:inset 0 0 60px rgba(var(--rp-a),.06),0 0 36px rgba(var(--rp-a),.07)}
+#projects.report-panel{--rp-a:239,184,204;--rp-b:200,160,240;--rp-c:140,215,240}
+#experience.report-panel{--rp-a:190,170,245;--rp-b:239,184,204;--rp-c:130,220,235}
+#about.report-panel{--rp-a:150,225,238;--rp-b:200,175,245;--rp-c:239,184,204}
+#contact.report-panel{--rp-a:245,175,200;--rp-b:160,215,245;--rp-c:210,180,245}
+/* Report hierarchy: technical headings, readable prose and labeled abstracts. */
+.report-panel .section-heading h2,.report-panel .about-copy h2{font-family:var(--tech,Orbitron,sans-serif);font-size:clamp(30px,3.3vw,48px);font-weight:500;letter-spacing:-.04em;line-height:1.2}
+.report-panel .section-heading{align-items:flex-start;gap:28px}
+.report-panel .report-abstract{max-width:360px;font-size:15px;line-height:1.8;padding-left:16px;border-left:1px solid rgba(var(--rp-a),.45)}
+.report-abstract>.micro{display:block;font:500 11px/1.6 var(--tech,Orbitron,sans-serif);color:rgb(var(--rp-a));margin-bottom:7px}
+.report-panel .project-body h3,.report-panel .experience-meta h3,.report-panel .skill-row h3{font-family:var(--report,Rajdhani,sans-serif);font-weight:600}
+.report-panel .project-body h3{font-size:29px;line-height:1.1;letter-spacing:-.01em}
+.report-panel .experience-meta h3{font-size:36px}
+.report-panel .skill-row h3{font-size:20px}
+.report-panel .contact-email{max-width:100%;overflow-wrap:anywhere;font-size:clamp(14px,2vw,24px)}
+.report-panel .contact-content{position:relative}
+.report-panel.contact-section h2{font-family:var(--tech,Orbitron,sans-serif);font-weight:500;font-size:clamp(40px,6vw,84px)}
+.report-panel.rp-leave .rp-schematic .orb{animation-play-state:paused}
+/* corner frame brackets */
+.report-panel::before,.report-panel::after{content:"";position:absolute;width:26px;height:26px;pointer-events:none;z-index:1;
+  border:2px solid rgba(var(--rp-a),.95);filter:drop-shadow(0 0 6px rgba(var(--rp-a),.6))}
+.report-panel::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+.report-panel::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
+.report-panel>.rp-deco{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;border-radius:inherit}
+.rp-grid{position:absolute;inset:0;opacity:.12;
+  background-image:linear-gradient(rgba(var(--rp-a),.7) 1px,transparent 1px),linear-gradient(90deg,rgba(var(--rp-a),.7) 1px,transparent 1px);
+  background-size:28px 28px;
+  -webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.rp-rail{position:absolute;left:26px;right:26px;top:8px;height:12px;display:flex;align-items:center;gap:10px;
+  font:600 11px/1 Orbitron,"Space Grotesk",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(var(--rp-a),.8);opacity:.75}
+.rp-rail i{flex:1;height:1px;background:linear-gradient(90deg,rgba(var(--rp-a),.7),rgba(var(--rp-a),.1));
+  transform-origin:left;transform:scaleX(1)}
+.rp-rail b{font-weight:600;white-space:nowrap}
+.rp-reg{position:absolute;width:14px;height:14px;opacity:.55;
+  background:linear-gradient(rgba(var(--rp-a),.9),rgba(var(--rp-a),.9)) center/1px 100% no-repeat,linear-gradient(rgba(var(--rp-a),.9),rgba(var(--rp-a),.9)) center/100% 1px no-repeat}
+.rp-reg::after{content:"";position:absolute;inset:3px;border:1px solid rgba(var(--rp-a),.9);border-radius:50%}
+.rp-reg.tr{top:8px;right:8px}.rp-reg.bl{bottom:8px;left:8px}
+.rp-schematic{position:absolute;right:clamp(10px,3vw,40px);top:22px;width:clamp(130px,22vw,260px);height:auto;opacity:.2;color:rgb(var(--rp-a))}
+.rp-schematic *{fill:none;stroke:currentColor;stroke-width:1;vector-effect:non-scaling-stroke}
+.rp-schematic .dot{fill:currentColor;stroke:none}
+.rp-schematic .orb{stroke-dasharray:3 5}
+.rp-schematic .draw{stroke-dasharray:1;stroke-dashoffset:0}
+.rp-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
+.rp-sweep{position:absolute;top:0;bottom:0;width:2px;left:0;opacity:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(var(--rp-c),.9),transparent);box-shadow:0 0 14px rgba(var(--rp-c),.7)}
+/* animations only when JS flags entry and motion allowed */
+.report-panel.rp-enter .rp-rail i{animation:rp-line .9s cubic-bezier(.2,.7,.2,1) both}
+.report-panel.rp-enter .rp-schematic .draw{animation:rp-draw .9s ease-out both}
+.report-panel.rp-enter .rp-sweep{animation:rp-sweep .9s ease-in-out both}
+.report-panel.rp-enter .rp-grid{animation:rp-grid .9s ease-out both}
+.report-panel.rp-leave .rp-deco{opacity:.35;transition:opacity .5s}
+.rp-schematic .orb{animation:rp-spin 90s linear infinite;transform-origin:50% 50%;transform-box:fill-box}
+@keyframes rp-line{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes rp-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes rp-sweep{0%{left:0;opacity:0}12%{opacity:.8}88%{opacity:.8}100%{left:calc(100% - 2px);opacity:0}}
+@keyframes rp-grid{from{opacity:0}to{opacity:.12}}
+@keyframes rp-spin{to{transform:rotate(360deg)}}
+body.motion-paused .report-panel *,body.motion-paused .report-panel::before,body.motion-paused .report-panel::after{animation:none!important;transition:none!important}
+body.motion-paused .rp-canvas,body.motion-paused .rp-sweep{display:none!important}
+@media (prefers-reduced-motion:reduce){
+  .report-panel *{animation:none!important;transition:none!important}.rp-canvas,.rp-sweep{display:none!important}}
+@media (max-width:640px){
+  .report-panel{padding:32px 18px 18px;margin-block:28px}
+  .report-panel .section-heading h2,.report-panel .about-copy h2{font-size:32px}
+  .report-panel .report-abstract{max-width:none;font-size:14px;margin-top:18px}
+  .report-panel .project-body{padding-inline:16px}
+  .report-panel .project-file{padding-inline:16px}
+  .rp-schematic{width:110px;opacity:.14}
+  .rp-rail{left:18px;right:18px}
+}
